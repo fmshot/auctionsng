@@ -207,11 +207,15 @@ console.log('ththt', data._id);
 
   onSubmitEditedProduct() {
     this.load.requesting = true;
+    const editedProductObjectToSubmit = this.editProductsForm.value;
+    editedProductObjectToSubmit['productimage'] = this.prodimage;
     this.adminproductService.putAdminProduct(this.editProductsForm.value, this.productToEdit['_id']).subscribe(
       (res) => {
         this.load.requesting = false;
-        this.allProductsss.push(res);
-        this.productsForm.reset();
+        
+        this.editProductsForm.reset();
+        document.getElementById('close_EditedProductsModal').click();
+        // this.allProductsss.push(res);
 
        },
       (error) => {
@@ -294,6 +298,12 @@ console.log('ththt', data._id);
   }
 
 }
+
+public setLocalForAdmin() {
+const n = 1
+localStorage.setItem('current_admin', n.toString());
+}
+
 
 }
 

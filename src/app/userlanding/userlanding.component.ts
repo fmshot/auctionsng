@@ -195,7 +195,13 @@ private getAuctions() {
  // call this wherever you want to close modal
 //  private closeModal(): void {
 //   this.closeBtn.nativeElement.click();
-// }
+//for users' logout button
+onLogout() {
+localStorage.setItem('current_user', null);
+console.log('Current User',
+);
+this.router.navigateByUrl('');
+}
 
 }
 // res.data.forEach(auction => {

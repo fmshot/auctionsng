@@ -29,12 +29,15 @@ export class NewproductsdetailsComponent implements OnInit {
   private productId: string;
   private viewedAuction: any = null;
   private auctionId: string;
+  public showForAdmin: boolean = false;
+  public admin: any;
 
   constructor(private activeRoute: ActivatedRoute, private adminService: AdminproductService,  
       private router: Router,
      private auctionService: AuctionService) {
     activeRoute.params.subscribe(param => {
       this.loggedInUser = localStorage.getItem('current_user');
+      this.admin = localStorage.getItem('current_admin')
       console.log('r', this.loggedInUser);
       this.productId = param.id;
       this.getProductById();
@@ -45,6 +48,10 @@ export class NewproductsdetailsComponent implements OnInit {
 
 
   ngOnInit() {
+    if (this.admin){
+    console.log('wou')
+    this.showForAdmin = true;
+    }
     if (this.loggedInUser) {
       // this.removeShowAuctionButton = true;
       // this.removeShowAuctionButton2 = true;

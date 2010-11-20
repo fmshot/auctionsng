@@ -331,7 +331,7 @@ let seconds = newTime%60;
      if (newTime <= 0) {
        // clearInterval(x);
        // document.getElementById("demo").innerHTML = "EXPIRED";
-       this.auctionTimer = "THIS AUCTION HAS BEEN CONCLUDED!";
+       this.auctionTimer = "AUCTION CONCLUDED!";
        // this.resOfTime = true;
        this.timeMessage = true;
        // that.checkMaxBid();

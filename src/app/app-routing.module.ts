@@ -9,14 +9,16 @@ import { AdminproductstableComponent } from './adminproductstable/adminproductst
 import { AdminuserstableComponent } from './adminuserstable/adminuserstable.component';
 import { AdminauctionstableComponent } from './adminauctionstable/adminauctionstable.component';
 import { FaqComponent } from './faq/faq.component';
+import { AdminproductdetailsComponent } from './adminproductdetails/adminproductdetails.component';
 
 
 
 
 
 const routes: Routes = [
+  { path: 'admindetails/:id', component: AdminproductdetailsComponent },
   { path: 'faq', component: FaqComponent },
-  { path: 'adminproductdetails/:id', component: NewproductsdetailsComponent},
+  { path: 'adminproductdetails/:id', component: NewproductsdetailsComponent },
   { path: 'userlanding', component: UserlandingComponent },
   { path: '', redirectTo: '/userlanding', pathMatch: 'full'},
   { path: 'userdashboard', component: UserdashboardComponent },

@@ -210,15 +210,24 @@ body {
     background-color: #FFF;
 }
 
+.adminImage{
+    width: 100% !important
+}
+
+
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
+
+
 img {
     -ms-interpolation-mode: bicubic;
 }
+
+
 
 object,
 embed {

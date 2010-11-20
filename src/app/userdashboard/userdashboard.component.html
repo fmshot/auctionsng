@@ -1,5 +1,5 @@
 
-<div class="with-top-header">
+<div id="BackToTop" class="with-top-header">
 
 	<!-- start Container Wrapper -->
 	<div class="container-wrapper">
@@ -20,7 +20,8 @@
 								
 								
 								<div class="top-header-widget welcome">
-									<p>Welcome {{currentUser?.firstname}} | Back To Home <a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo"></a></p>
+									<p>Welcome {{currentUser?.firstname}} |<a routerLink="/userlanding" routerLinkActive="active" >Back To Home</a>
+									</p>
 								</div>
 							
 							</div>
@@ -47,7 +48,7 @@
 				<div class="container">
 						
 					<div class="navbar-header">
-						<a class="navbar-brand" href=""><strong class="text-primary">AUTIONS</strong>ng</a>
+						<div class="navbar-brand"><strong class="text-primary">AUTIONS</strong>ng</div>
 					</div>
 						
 					<div id="navbar" class="collapse navbar-collapse navbar-arrow pull-left">
@@ -65,7 +66,7 @@
 						
 						<ul class="nav navbar-nav" id="responsive-menu">
 							<li>
-								<a href="" style="cursor: pointer">Home</a>
+								<a routerLink="/userlanding" routerLinkActive="active" style="cursor: pointer">Home</a>
 							</li>
 							
 							<!-- <li>
@@ -74,8 +75,11 @@
 							</li> -->
 							<!-- <li><a [ngx-scroll-to]="'#aboutus'" style="cursor: pointer">About Us</a></li> -->
 							<li>
-								<a [ngx-scroll-to]="'#products'" style="cursor: pointer" *ngIf='showAuctions' (click)='showAuctions=false'>Products </a></li>
+								<a [ngx-scroll-to]="'#products'" style="cursor: pointer" (click)='showAuctions=false'>Products </a></li>
 							<li><a [ngx-scroll-to]="'#show'"(click)='showAuctions=true' style="cursor: pointer">Ongoing Auctions</a></li>
+							<li><a (click)="onLogout()" style="cursor: pointer">Logout</a></li>
+							<!-- <li><a [ngx-scroll-to]="'#show'"(click)='showAuctions=true' style="cursor: pointer">Ongoing Auctions</a></li> -->
+
 						</ul>
 						
 					</div><!--/.nav-collapse -->
@@ -106,7 +110,7 @@
 						<div class="col-xs-12 col-sm-6">
 							<ol class="breadcrumb">
 								<li class="active text">You Are Here:</li>
-								<li><a href="#">Home</a></li>
+								<li><a routerLink="/userlanding" routerLinkActive="active">Home</a></li>
 								<li class="active">Your Dashboard</li>
 							</ol>
 						</div>
@@ -124,8 +128,9 @@
 					<div class="row gap-25-sm">
 						
 						<div class="col-sm-8 col-md-9">
-
-							<div class="content-wrapper">
+						<!-- <div class="content-wrapper"> -->
+										<br><br><br><br>
+							<!-- <div class="content-wrapper"> -->
 							
 								<div class="result-sorting-wrapper mb-30">
 									<div class="row">
@@ -161,10 +166,7 @@
 										
 											<div class="GridLex-col-4_sm-6_xs-12"  *ngFor="let product of allProducts; let i = index">
 											
-											
 												<div class="car-item">
-									
-													<a href="#">
 														<div class="image">
 															<img [src]=product?.productimage alt="Car"/>
 														</div>
@@ -174,17 +176,16 @@
 															<span class="">Auction Date: </span>{{product?.auctiondate}}
 														</div>
 														<div class="bottom">
-															<ul class="car-meta clearfix">
+															<!-- <ul class="car-meta clearfix"> -->
+																<!-- <ul class="car-meta clearfix"> -->
 																<!-- <li>
 																	<i class="fa fa-cogs"></i> Diesel
 																</li> -->
-																<li>
-																	<a routerLink='../adminproductdetails/{{product?._id}}' routerLinkActive="active"><i class="fa fa-th"></i>More</a>
-																</li>
-															</ul>
+																<p class="car-meta clearfix">
+																	<a routerLink='../adminproductdetails/{{product?._id}}' routerLinkActive="active"><i class="fa fa-th"></i> View Details</a>
+																</p>
+															<!-- </ul> -->
 														</div>
-													</a>
-													
 												</div>
 
 											</div>
@@ -241,14 +242,14 @@
 															<!-- <p class="price">$109,535</p> -->
 														</div>
 														<div class="bottom">
-															<ul class="car-meta clearfix">
+															<!-- <ul class="car-meta clearfix"> -->
 																<!-- <li>
 																	<i class="fa fa-cogs"></i>
 																</li> -->
-																<li>
+																<p>
 																	<a routerLink='../appchat/{{auction?._id}}' routerLinkActive="active"><i class="fa fa-th"></i>Join Auction</a>
-																</li>
-															</ul>
+																</p>
+															<!-- </ul> -->
 														</div>										
 																				
 												</div>
@@ -262,11 +263,13 @@
 								</div>
 								</div>
 															
-							</div>
+							<!-- </div> -->
+						<!-- </div> -->
 						
 						</div>
 						
 						<div class="col-sm-4 col-md-3">
+							<!-- <div class="content-wrapper"> -->
 						
 							<aside class="sidebar-wrapper">
 							
@@ -277,7 +280,7 @@
 									<div class="inner">
 									
 										<div class="car-item-sm" *ngFor="let auction of onGoingAuctions" >
-											<a href="#">
+											<!-- <a href="#"> -->
 											
 												<div class="image-bg" style="background-image:url(auction?.productObject?.productimage);"><img [src]=auction?.productObject?.productimage alt="Product image"/></div>
 												<div class="content">
@@ -289,7 +292,7 @@
 														<p class="price">{{auction?.year}}</p>
 													</div>
 												</div>
-											</a>
+											<!-- </a> -->
 										</div>
 									</div>
 									
@@ -302,7 +305,7 @@
 									<div class="inner">
 									
 										<div class="car-item-sm" *ngFor="let product of allProducts" >
-											<a href="#">
+											<!-- <a href="#"> -->
 											
 												<div class="image-bg"><img [src]=product?.productimage alt="Product image"/></div>
 												<div class="content">
@@ -314,7 +317,7 @@
 														<a class="price" routerLink='../adminproductdetails/{{product?._id}}' routerLinkActive="active">View Details</a>
 													</div>
 												</div>
-											</a>
+											<!-- </a> -->
 										</div>
 									</div>
 									
@@ -349,7 +352,7 @@
 								</div>
 								
 							</aside>
-							
+							<!-- </div> -->
 						</div>
 					
 					</div>
@@ -359,7 +362,7 @@
 			</div>
 			
 		</div>
-		
+		<br><br><br><br>
 		<div class="footer-wrapper scrollspy-footer" id='ourcontact'>
 
 			<footer class="main-footer">
@@ -371,20 +374,23 @@
 						<div class="col-xs-12 col-sm-12 col-md-3 mb-30-sm">
 						
 							<div class="footer-logo">
-								<a href="#home"><strong class="text-primary">AUCTION</strong>ng</a>
+								<div><strong class="text-primary">AUCTION</strong>ng</div>
 							</div>
 							
-							<p class="about-us-footer">Our trusworthiness is built from our high level of professionalism, acquired over the years.<a [ngx-scroll-to]="'#aboutus'" class="font-italic">read more</a></p>
+							<p class="about-us-footer">Our trusworthiness is built from our high level of professionalism, acquired over the years.
+							</p>
+								<!-- <a [ngx-scroll-to]="'#aboutus'" class="font-italic" style="cursor: pointer">read more</a> -->
 							
-							<div class="social-footer clearfix">
+							
+							<!-- <div class="social-footer clearfix">
 								<a href="#"><i class="fa fa-facebook-official"></i></a>
 								<a href="#"><i class="fa fa-twitter"></i></a>
-								<!-- <a href="#"><i class="fa fa-google-plus "></i></a>
+								<a href="#"><i class="fa fa-google-plus "></i></a>
 								<a href="#"><i class="fa fa-codepen"></i></a>
 								<a href="#"><i class="fa fa-behance"></i></a>
 								<a href="#"><i class="fa fa-github"></i></a>
-								<a href="#"><i class="fa fa-jsfiddle"></i></a> -->
-							</div>
+								<a href="#"><i class="fa fa-jsfiddle"></i></a>
+							</div> -->
 						
 						</div>
 						
@@ -393,11 +399,11 @@
 							<h4 class="footer-title">Quick Menu</h4>
 							
 							<ul class="menu-footer">
-								<li><a [ngx-scroll-to]="'#aboutus'">About Us</a></li>
+								<!-- <li><a [ngx-scroll-to]="'#aboutus'" style="cursor: pointer">About Us</a></li> -->
 								<!-- <li><a href="#">Partners</a></li> -->
 								<!-- <li><a href="#">Terms</a></li> -->
 								<!-- <li><a href="#">Privacy Policy</a></li> -->
-								<li><a href="#">FAQ</a></li>
+								<li><a routerLink='../faq' routerLinkActive="active">FAQ</a></li>
 								<!-- <li><a href="#">FAQ</a></li> -->
 								<!-- <li><a href="#">Press</a></li> -->
 								<!-- <li><a href="#">Contact</a></li> -->
@@ -455,8 +461,9 @@
 						
 						<div class="col-sm-6">
 							<ul class="secondary-footer-menu clearfix">
-								<li><a href="" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign-in</a></li>
-								<li><a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Sign-up</a></li>
+								 <a [ngx-scroll-to]="'#BackToTop'" style="cursor: pointer"><i class="ion-ios-arrow-up">Back To Top</i></a>
+							<!-- 	<li><a href="" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign-in</a></li>
+								<li><a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Sign-up</a></li> -->
 								<!-- <li><a href="#">Sign-up</a></li> -->
 							</ul>
 						</div>
@@ -474,7 +481,7 @@
 	<!-- end Container Wrapper -->
  
 <!-- start Back To Top -->
-<div id="back-to-top">
-   <a href="#"><i class="ion-ios-arrow-up"></i></a>
-</div>
+<!-- <div id="back-to-top">
+   <a href="#"><i class="ion-ios-arrow-up">Back To Top</i></a>
+</div> -->
 <!-- end Back To Top -->

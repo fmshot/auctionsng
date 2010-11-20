@@ -54,6 +54,7 @@ import { AdminuserstableComponent } from './adminuserstable/adminuserstable.comp
 import { AdminauctionstableComponent } from './adminauctionstable/adminauctionstable.component';
 import { AdminbidstableComponent } from './adminbidstable/adminbidstable.component';
 import { FaqComponent } from './faq/faq.component';
+import { AdminproductdetailsComponent } from './adminproductdetails/adminproductdetails.component';
 // import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 // import { ProductdetailsComponent } from './productdetails/productdetails.component';
 // import { UserproductdetailsComponent } from './userproductdetails/userproductdetails.component';
@@ -126,6 +127,9 @@ import { FaqComponent } from './faq/faq.component';
 
 
     FaqComponent,
+
+
+    AdminproductdetailsComponent,
     // UserloginComponent,
     // AboutshopcartComponent,
     // ContactusComponent,

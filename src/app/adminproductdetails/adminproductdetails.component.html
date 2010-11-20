@@ -37,7 +37,7 @@
 									<i class="fa fa-phone"></i> call us: 09069317298								
 								</div>
 								<div class="top-header-widget pull-right">
-									<a *ngIf='!showForAdmin'(click)="onLogout()" style="cursor: pointer;">
+									<a (click)="onLogout()" style="cursor: pointer;">
 										<i class="mr-3">Logout</i> 
 									</a>
 								</div>
@@ -71,15 +71,14 @@
 						
 						<ul class="nav navbar-nav" id="responsive-menu">
 							<li>
-								<a *ngIf='showForAdmin' routerLink='/products-admin' routerLinkActive="active">Products Table</a>
+								<a href="">Home</a>
 							</li>
 							<!-- <li><a [ngx-scroll-to]="'#aboutus'">About Us</a></li> -->
 							<li>
 								<a [ngx-scroll-to]="'#ourcontact'" style="cursor: pointer;">More Details</a></li>
 							<!-- <li><a [ngx-scroll-to]="'#ourservices'">FAQs</a></li> -->
 							<!-- <li><a [ngx-scroll-to]="'#products'">Products</a></li> -->
-							<li><a *ngIf='!showForAdmin' (click)='removeShowAuctionButton2=!removeShowAuctionButton2'
-							 [ngx-scroll-to]="'#aboutus'" style="cursor: pointer;">Ongoing Auctions</a></li>
+							<li><a (click)='removeShowAuctionButton2=!removeShowAuctionButton2' [ngx-scroll-to]="'#aboutus'" style="cursor: pointer;">Ongoing Auctions</a></li>
 							<li><a class="error" *ngIf='removeShowAuctionButton2'>{{this.removeShowAuctionButton3}}</a></li>
 							<!-- <div class="error" *ngIf='removeShowAuctionButton2'>
 							 <small>{{this.removeShowAuctionButton3}}</small>
@@ -114,8 +113,7 @@
 						<div class="col-xs-12 col-sm-6">
 							<ol class="breadcrumb">
 								<li class="active text">You Are Here:</li>
-								<li><a *ngIf='showForAdmin' routerLink="/products-admin" routerLinkActive="active">Admin</a></li>
-								<li><a *ngIf='!showForAdmin' routerLink="/userdashboard" routerLinkActive="active">Home</a></li>
+								<li><a href="">Home</a></li>
 								<li class="active">Product Details</li>
 							</ol>
 						</div>
@@ -156,12 +154,12 @@
 										<div class="tab-style-1 detail-tab">
 											<div class="tab-style-1-header clearfix">
 													<ul id="detailTab" class="tab-nav clearfix mb-10-xss">
-														<li class="active"><a *ngIf='!showForAdmin' routerLink='/userdashboard' routerLinkActive="active">All Products</a></li>
+														<li class="active"><a  routerLink='/userdashboard' routerLinkActive="active">All Products</a></li>
 														<a [ngx-scroll-to]="'#productDetails'" style="cursor: pointer;"><li class="active"> More Details</li></a>
 														<!-- <li><a href="#detailTab2" data-toggle="tab" *ngIf='toJoinAuctions'>Interior</a></li> -->
 													</ul>
 													<!-- <a data-toggle="modal" href="#enquiryModal" class="btn btn-info pull-right pull-left-xss" *ngIf='toJoinAuctions'>Join Auction</a> -->
-													<a *ngIf='!showForAdmin' routerLink='/userdashboard' routerLinkActive="active" (click)= 'allShowOngoings()' class="btn btn-info pull-right pull-left-xss">Ongoing Auctions</a>
+													<a routerLink='/userdashboard' routerLinkActive="active" (click)= 'allShowOngoings()' class="btn btn-info pull-right pull-left-xss">Ongoing Auctions</a>
 
 											</div>
 											
@@ -247,7 +245,7 @@
 									
 												<div class="car-item-sm" *ngFor="let product of allProductsss; let i = index">
 														<!-- <div class="image-bg" style="background-image:url(product?.productimage);"></div> -->
-														<div class="image-bg" style="background-image:url(product?.productimage);"><div style="width: 100%"><img [src]=product?.productimage alt="image" /></div></div>
+														<div class="image-bg" style="background-image:url(product?.productimage);"><img [src]=product?.productimage alt="image" /></div>
 														<div class="content">
 															<h6>{{product?.productname}}</h6>
 															<div class="bottom">
@@ -311,8 +309,8 @@
 																		<i class="fa fa-tachometer"></i> {{product?.year}}
 																	</li>
 																</ul>
-																<a  [ngx-scroll-to]="'#theProduct'" routerLink='../{{product?._id}}'  routerLinkActink="active">
-																	<p class="price" *ngIf='!showForAdmin'>View Details</p>
+																<a [ngx-scroll-to]="'#theProduct'" routerLink='../{{product?._id}}'  routerLinkActink="active">
+																	<p class="price">View Details</p>
 																</a>
 															</div>
 														</div>

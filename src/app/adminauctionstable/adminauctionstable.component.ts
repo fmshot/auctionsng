@@ -17,8 +17,9 @@ declare const $: any;
   providers: [AuctionService]
 })
 export class AdminauctionstableComponent implements OnInit {
+public auctionToEdit: any;
   public allProductss: any =[];
-  public auctionToEdit = null;
+
   public addNewAuctionsForm: FormGroup;
   public currentAuction ={};
   public allAuctions: any = [];
@@ -40,6 +41,16 @@ export class AdminauctionstableComponent implements OnInit {
       restartBid:[""],   
 }
   }
+
+  static editAuctionsForm = () => {
+    return {
+      startDateAndTime: [""],
+      auctionProductId: [""],
+      auctionStartAmount:[""],   
+}
+  }
+
+
   constructor(private adminproductService: AdminproductService,
               private auctionService: AuctionService,
               private activatedRoute: ActivatedRoute,
@@ -74,8 +85,6 @@ public getProducts() {
   //for submitting new auctions
  onSubmitAddNewAuctionsForm() {
   this.load.requesting = true;
-  // alert('something');
-  // console.log(this.addNewAuctionsForm.value);
   const auctionProduct = this.allProductss.filter(product => {
     return product['_id'] == this.addNewAuctionsForm.value['auctionProductId'];
   })[0];
@@ -104,10 +113,15 @@ public getProducts() {
   public getauctions() {
     this.auctionService.getAuction().subscribe(
       (response: any) => {
-        console.log('respone gfhgfhfghhg ', response);
-        // if(Date.now() > response.dateandtime)
-        // console.log(response.dateandtime);
-        this.allAuctions = response;
+        console.log('response for all auctions ', response);
+        // response.productObject = JSON.parse(response.productObject);
+        // console.log('paresed response for all auctions ', response);
+        response.forEach( (auctionsgoing) => {
+         
+          // auctionsgoing.productObject =  JSON.parse(auctionsgoing.productObject);
+          return;
+        });
+         this.allAuctions = response;
       }, (error) => {
         console.log('Error ', error);
       });
@@ -134,6 +148,14 @@ public getProducts() {
     });
   }
   //switching toggle
+
+  addId(data) {
+    
+    this.editAuctionsForm.patchValue(data);
+    this.auctionToEdit = data;
+    
+console.log('ththt', data._id);
+  }
  }
 
 

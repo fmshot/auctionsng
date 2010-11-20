@@ -20,7 +20,7 @@
 								
 								
 								<div class="top-header-widget welcome">
-									<p>Welcome | <a href="">Back To Home</a>
+									<p>Welcome | <a routerLink="" routerLinkActive="active">Back To Home</a>
 									</p>
 								</div>
 							
@@ -48,7 +48,7 @@
 				<div class="container">
 						
 					<div class="navbar-header">
-						<a class="navbar-brand" href="index.html"><strong class="text-primary">AUTIONS</strong>ng</a>
+						<a class="navbar-brand"><strong class="text-primary">AUTIONS</strong>ng</a>
 					</div>
 						
 					<div id="navbar" class="collapse navbar-collapse navbar-arrow pull-left">
@@ -66,7 +66,7 @@
 						
 						<ul class="nav navbar-nav" id="responsive-menu">
 							<li>
-								<a href="#">Home</a>
+								<a routerLink="" routerLinkActive="active">Home</a>
 							</li>
 							<!-- <li><a [ngx-scroll-to]="'#aboutus'">About Us</a></li> -->
 							<!-- <li> -->
@@ -128,20 +128,20 @@
 						
 							<div class="faq-wrapper faq-border">
 							
-								<div class="faq-section">
+								<div id='faq' class="faq-section">
 							
 									<div class="panel-group bootstarp-accordion" id="accordion" role="tablist" aria-multiselectable="true">
 									
 										<div class="panel">
 											<div class="panel-heading" role="tab" id="headingTwo">
 												<h4 class="panel-title">
-													<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">How does this platform work?</a>
+													<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">What is AuctionNG?</a>
 												</h4>
 											</div>
 											<div id='collapseOne' class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 												<div class="panel-body">
 													<div class="faq-thread">
-														<p><span class=""><h5>Auctions.ng</h5></span>/ is a web platform that gives you the oppurtunity to own some of you most wanted valued properties through an online bidding platform. Our processes are thoroughly smooth and seamless, and with our 15-plus years experience in the IT industry, we guarantee you  a perfect bidding experience!</p>
+														<p><span class=""><h5>Auctions.ng</h5></span> is a web platform that gives you the oppurtunity to own some of you most wanted valued properties through an online bidding platform. Our processes are thoroughly smooth and seamless, and with our 15-plus years experience in the IT industry, we guarantee you  a perfect bidding experience!</p>
 													</div>
 												</div>
 											</div>
@@ -261,7 +261,8 @@
 							
 							<div class="call-to-action mt-50">
 									
-								Can't find a question you wanted? <a href="#" class="btn btn-primary btn-sm btn-inverse">Contact Us</a> for your privilege question.
+								Can't find a question you wanted? 
+								<!-- <a href="#" class="btn btn-primary btn-sm btn-inverse">Contact Us</a> --> Contact us through phone or e-mail for your privilege question.
 							
 							</div>
 							
@@ -286,15 +287,16 @@
 						<div class="col-xs-12 col-sm-12 col-md-3 mb-30-sm">
 						
 							<div class="footer-logo">
-								<a href="#home"><strong class="text-primary">AUCTION</strong>ng</a>
+								<a><strong class="text-primary">AUCTION</strong>ng</a>
 							</div>
 							
-							<p class="about-us-footer">Our trusworthiness is built from our high level of professionalism, acquired over the years.<a [ngx-scroll-to]="'#aboutus'" class="font-italic">read more</a></p>
+							<p class="about-us-footer">Our trusworthiness is built from our high level of professionalism, acquired over the years.<!-- <a [ngx-scroll-to]="'#aboutus'" class="font-italic">read more</a> -->
+							</p>
 							
 							<div class="social-footer clearfix">
-								<a href="#"><i class="fa fa-facebook-official"></i></a>
+								<!-- <a href="#"><i class="fa fa-facebook-official"></i></a>
 								<a href="#"><i class="fa fa-twitter"></i></a>
-								<!-- <a href="#"><i class="fa fa-google-plus "></i></a>
+								<a href="#"><i class="fa fa-google-plus "></i></a>
 								<a href="#"><i class="fa fa-codepen"></i></a>
 								<a href="#"><i class="fa fa-behance"></i></a>
 								<a href="#"><i class="fa fa-github"></i></a>
@@ -312,7 +314,7 @@
 								<!-- <li><a href="#">Partners</a></li> -->
 								<!-- <li><a href="#">Terms</a></li> -->
 								<!-- <li><a href="#">Privacy Policy</a></li> -->
-								<li><a href="#">FAQ</a></li>
+								<li><a [ngx-scroll-to]="'#faq'">FAQ</a></li>
 								<!-- <li><a href="#">FAQ</a></li> -->
 								<!-- <li><a href="#">Press</a></li> -->
 								<!-- <li><a href="#">Contact</a></li> -->
