@@ -1,0 +1,585 @@
+
+<div class="with-top-header">
+
+	<!-- start Container Wrapper -->
+	<div class="container-wrapper">
+
+		<!-- start Header -->
+		<header id="header">
+	  
+			<!-- start Navbar (Header) -->
+			<nav class="navbar navbar-primary navbar-fixed-top navbar-sticky-function">
+				
+				<div id="top-header">
+			
+					<div class="container">
+					
+						<div class="row">
+						
+							<div class="col-xs-12 col-sm-6 clearfix">
+								
+								
+								<div class="top-header-widget welcome">
+									<p>Welcome | <a href="" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign In</a> or  <a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Register</a> </p>
+								</div>
+							
+							</div>
+							
+							<div class="col-sm-6 clearfix hidden-xs">
+
+								<div class="top-header-widget pull-right">
+									<!-- <a href="#">
+										<i class="fa fa-comments mr-3"></i> Get quote 
+									</a> -->
+								</div>
+								<div class="top-header-widget pull-right">
+									<i class="fa fa-phone"></i> call us: 09069317298								
+								</div>
+
+							</div>
+							
+						</div>
+					
+					</div>
+					
+				</div>
+
+				<div class="container">
+						
+					<div class="navbar-header">
+						<a class="navbar-brand" href="index.html"><strong class="text-primary">AUTIONS</strong>ng</a>
+					</div>
+						
+					<div id="navbar" class="collapse navbar-collapse navbar-arrow pull-left">
+					
+						<!-- SEARCH -->
+						<!-- <div id="search-container">
+							<form id="search-form" name="search-form" method="get" action="#">
+								<fieldset>
+									<input type="search" name="search" placeholder="Enter your keyword here and then press enter...">
+								</fieldset>
+							</form>
+						</div>search-container -->
+						
+						<!-- <a class="search-button" href="#"></a> -->
+						
+						<ul class="nav navbar-nav" id="responsive-menu">
+							<li>
+								<a href="#">Home</a>
+							</li>
+							<li><a [ngx-scroll-to]="'#aboutus'">About Us</a></li>
+							<li>
+								<a [ngx-scroll-to]="'#ourcontact'">Our Contacts</a></li>
+							<!-- <li><a [ngx-scroll-to]="'#ourservices'">FAQs</a></li> -->
+							<li><a [ngx-scroll-to]="'#products'">Products</a></li>
+							<!-- <li><a data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Login</a></li> -->
+							<!-- <li><a data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Register</a></li> -->
+							<li><a (click)='removeShowAuctionButton2=!removeShowAuctionButton2'>Ongoing Auctions</a></li>
+							<li><a class="error" *ngIf='removeShowAuctionButton2'>{{this.removeShowAuctionButton3}}</a></li>
+
+						</ul>
+						
+					</div><!--/.nav-collapse -->
+
+				</div>
+				
+				<div id="slicknav-mobile"></div>
+				
+			</nav>
+			<!-- end Navbar (Header) -->
+
+    </header>
+
+		<!-- start Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- start hero-header -->
+			<div class="hero" style="background-image:url('../../assets/styles/images/hero-header/blacklady.jpg');">
+			
+				<div class="container">
+				
+					<div class="row">
+					
+						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+
+						  <!-- Hero heading -->
+						  <h1 class="animated fadeInUp">Welcome to Auctions.com!</h1>
+
+						  <!-- Hero subheading -->
+						  
+						  <p class="animated fadeInUp delay_1">Bid for centuries old artifacts, antiques and jewelry.</p>
+						  <p class="animated fadeInUp delay_1">Bids. Auctions. Rewards.</p>
+						  
+						  <div class="text-center text-left-xs mt-30">
+							<a><h3 class="animated fadeInUp delay_2 btn btn-primary btn-lg" [ngx-scroll-to]="'#products'">View Products</h3></a>
+						  </div>
+
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			<br><br>
+			
+			<div class="section welcome-wrapper" id='aboutus'>
+			
+				<div class="container">
+
+					<div class="row">
+					
+						<div class="col-sm-12 col-md-8">
+							<div class="section-title-2">
+								<h2>Welcome to Auctions.ng</h2>
+							</div>
+							<div class="section-title-2">
+								<h5>Buy artifacts and antiques from the comfort of your home</h5>
+							</div>
+							
+							<p>Auctions.ng is a web platform that gives you the oppurtunity to own some of you most wanted valued properties through an online bidding platform. Our processes are thoroughly smooth and seamless, and with our 15-plus years experience in the IT industry, we guarantee you  a perfect bidding experience!</p>
+							
+							<div class="featured-item-wrapper mt-30">
+							
+								<div class="GridLex-gap-30">
+							
+									<div class="GridLex-grid-noGutter-equalHeight">
+									
+										<div class="GridLex-col-6_sm-6_xs-12_xss-12">
+										
+											<div class="featured-item">
+									
+												<div class="icon">
+													<i class="fa fa-thumbs-up"></i>
+												</div>
+												
+												<div class="content">
+													<h5>Trusted By Thousands</h5>
+													<p>Our current registered users stand at 35,000 with an average rating of 4.7</p>
+												</div>
+											
+											</div>
+											
+										</div>
+										
+										<div class="GridLex-col-6_sm-6_xs-12_xss-12">
+										
+											<div class="featured-item">
+									
+												<div class="icon">
+													<i class="fa fa-pie-chart"></i>
+												</div>
+												
+												<div class="content">
+													<h5>Wide Range Of Products</h5>
+													<p>Our product cut across all needs and functions.</p>
+												</div>
+											
+											</div>
+											
+										</div>
+										
+										<div class="GridLex-col-6_sm-6_xs-12_xss-12">
+										
+											<div class="featured-item">
+									
+												<div class="icon">
+													<i class="fa fa-balance-scale"></i>
+												</div>
+												
+												<div class="content">
+													<h5>Professional Dealers</h5>
+													<p>Our trusworthiness is built from our high level of professionalism, acqiured over the years.</p>
+												</div>
+											
+											</div>
+											
+										</div>
+										
+										<div class="GridLex-col-6_sm-6_xs-12_xss-12">
+										
+											<div class="featured-item">
+									
+												<div class="icon">
+													<i class="fa fa-money"></i>
+												</div>
+												
+												<div class="content">
+													<h5>FAA Acreditation</h5>
+													<p>We have a 5.0 accreditation from the International Auctions Association, another reason for you to transact with us!</p>
+												</div>
+											
+											</div>
+											
+										</div>
+										
+									</div>
+								
+								</div>
+							
+							</div>
+
+						</div>
+						
+					</div>
+					
+					<div class="welcome-image-bg" style="background-image:url('../../assets/styles/images/welcome/gavel2.jpg');"></div>
+
+				</div>
+			</div>
+
+			<div class="bg-light section" id='products'>
+				<div class="container">
+				
+					<div class="row">
+						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+							<div class="section-title text-center">
+								<h2>All Products</h2>
+						</div>
+						</div>
+					</div>
+
+					<div  class="car-item-wrapper">
+					
+						<div class="GridLex-gap-30">
+						
+							<div class="GridLex-grid-noGutter-equalHeight GridLex-grid-center">
+							
+								<div id="products" class="GridLex-col-3_sm-6_xs-6_xss-12"  *ngFor="let product of allProducts; let i = index">
+								
+									<div class="car-item">
+									
+											<div class="image">
+												<img [src]=product?.productimage alt=""/>
+											</div>
+											<div class="content">
+												<h5>{{product?.productname}}</h5>
+												<!-- <h6>This product is available</h6> -->
+												<!-- <p class="price">$109,535</p> -->
+											</div>
+											<div class="bottom">
+												<ul class="car-meta clearfix">
+													<li>
+														<i class="fa fa-cogs"></i>
+													</li>
+													<li>
+														<a routerLink='../adminproductdetails/{{product?._id}}' routerLinkActive="active"><i class="fa fa-tachometer"></i>More Details</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+								</div>
+																						
+							</div>
+							
+						</div>
+						
+					</div>
+					</div>
+			</div>
+<!-- logo section -->
+			
+			<div class="bg-light section" id='ourservices'>
+			
+				<div class="container mb-5">
+				
+					<div class="row">
+						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+							<div class="section-title text-center">
+								<h2>How To Participate</h2>
+								<p>Only three quick steps are required for you to win your preferred products!</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+					
+						<div class="col-sm-12 col-md-4 mb-30-sm">
+						
+							<div class="featured-header-most-top">
+							
+								<h5><span class="bg-light">Login/View Product Details</span></h5>
+								<div class="icon"><i class="fa fa-commenting"></i></div>
+								<p>To participate, register with us, then view the details of any product of your choice, nothing the date and time that its auction will take placewin</p>
+								<!-- <a href="#" class="btn btn-primary">Learn More</a> -->
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-12 col-md-4 mb-30-sm">
+						
+							<div class="featured-header-most-top">
+							
+								<h5><span class="bg-light">Join Ongoing Auctions</span></h5>
+								<div class="icon"><i class="fa fa-credit-card"></i></div>
+								<p>On Login you can view and then join any any ongoing auction to place your bids</p>
+								<!-- <a href="#" class="btn btn-primary">Build</a> -->
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-12 col-md-4">
+						
+							<div class="featured-header-most-top">
+							
+								<h5><span class="bg-light">Recieve Email Notification</span></h5>
+								<div class="icon"><i class="fa fa-heartbeat"></i></div>
+								<p>If you win an auction, you will recieve an email notification on the details of your win and the process of retrieval</p>
+								<!-- <a href="#" class="btn btn-primary">Get Your Car</a> -->
+							</div>
+						
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+				
+		</div>
+		
+		<div class="footer-wrapper scrollspy-footer" id='ourcontact'>
+
+			<footer class="main-footer">
+								
+				<div class="container">
+						
+					<div class="row">
+					
+						<div class="col-xs-12 col-sm-12 col-md-3 mb-30-sm">
+						
+							<div class="footer-logo">
+								<a href="#home"><strong class="text-primary">AUCTION</strong>ng</a>
+							</div>
+							
+							<p class="about-us-footer">Our trusworthiness is built from our high level of professionalism, acquired over the years.<a [ngx-scroll-to]="'#aboutus'" class="font-italic">read more</a></p>
+							
+							<div class="social-footer clearfix">
+								<a href="#"><i class="fa fa-facebook-official"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<!-- <a href="#"><i class="fa fa-google-plus "></i></a>
+								<a href="#"><i class="fa fa-codepen"></i></a>
+								<a href="#"><i class="fa fa-behance"></i></a>
+								<a href="#"><i class="fa fa-github"></i></a>
+								<a href="#"><i class="fa fa-jsfiddle"></i></a> -->
+							</div>
+						
+						</div>
+						
+						<div class="col-xs-12 col-sm-12 col-md-3 mb-30-sm">
+							
+							<h4 class="footer-title">Quick Menu</h4>
+							
+							<ul class="menu-footer">
+								<li><a [ngx-scroll-to]="'#aboutus'">About Us</a></li>
+								<!-- <li><a href="#">Partners</a></li> -->
+								<!-- <li><a href="#">Terms</a></li> -->
+								<!-- <li><a href="#">Privacy Policy</a></li> -->
+								<li><a href="#">FAQ</a></li>
+								<!-- <li><a href="#">FAQ</a></li> -->
+								<!-- <li><a href="#">Press</a></li> -->
+								<!-- <li><a href="#">Contact</a></li> -->
+							</ul>
+						
+						</div>
+						
+						<div class="sm-clear"></div>
+						
+						<div class="col-xs-12 col-sm-12 col-md-3  mb-30-sm">
+							
+							<h4 class="footer-title">Office Hours</h4>
+							
+							<ul class="office-hour">
+								<li >
+									Monday - Friday
+									<span>08:00 - 19:00</span>
+								</li>
+								<li >
+									Saturday
+									<span>08:00 - 14:30</span>
+								</li>
+								<li class="text-primary">
+									Sunday
+									<span>Closed</span>
+								</li>
+							</ul>
+
+
+							
+						</div>
+						
+						<div class="col-sm-12 col-md-3">
+
+							<h4 class="footer-title">Address</h4>
+							<p class="footer-address">4, ASSBFFI Road, Alausa, Ikeja, Lagos, Nigeria<br /><span class="block text-white font20 font700 line20 mt-10 mb-5">+234-90693178</span>support@auction.ng.com</p>
+						
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</footer>
+			
+			<footer class="secondary-footer">
+			
+				<div class="container">
+				
+					<div class="row">
+					
+						<div class="col-sm-6">
+							<p class="copy-right">&#169; Copyright 2016 AUCTION.ng</p>
+						</div>
+						
+						<div class="col-sm-6">
+							<ul class="secondary-footer-menu clearfix">
+								<li><a href="" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign-in</a></li>
+								<li><a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Sign-up</a></li>
+								<!-- <li><a href="#">Sign-up</a></li> -->
+							</ul>
+						</div>
+						
+					</div>
+				
+				</div>
+				
+			</footer>
+			
+		</div>
+		<!-- end footer-wrapper -->
+		
+	</div>
+	<!-- end Container Wrapper -->
+ 
+<!-- start Back To Top -->
+<div id="back-to-top">
+   <a href="#"><i class="ion-ios-arrow-up"></i></a>
+</div>
+<!-- end Back To Top -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+				<form class="" [formGroup]="userAccessForm" (ngSubmit)="onSubmitUserAccess()">			
+		  <div class="modal-content">
+				  <div class="modal-header">
+						  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						  <h4 class="modal-title text-center">Sign-in into your account</h4>
+					  </div>
+			
+			<div class="modal-body">
+				  <div class="row gap-20">	
+					  <div class="col-sm-12 col-md-12">
+						  
+						  <div class="form-group" > 
+							  <label>Email</label>
+							  <input class="form-control" formControlName="email" placeholder="Email" placeholder="Min 4 and Max 10 characters" type="text"> 
+						  </div>
+					  
+					  </div>
+					  
+					  <div class="col-sm-12 col-md-12">
+					  
+						  <div class="form-group"> 
+							  <label>Password</label>
+							  <input class="form-control" formControlName="password" placeholder="Password"placeholder="Min 4 and Max 10 characters" type="text"> 
+						  </div>
+					  
+					  </div>
+					
+									  
+					  <div class="col-sm-12 col-md-12">
+						  <div class="register-box-box-action">
+							  No account? <a data-toggle="modal" href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Register</a>
+						  </div>
+					  </div>
+					  
+				  </div>
+			  </div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  <button type="submit" class="btn btn-primary" >Login</button>
+			</div>
+		  </div>
+		</form>
+		</div>
+	  </div>
+
+	  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe1" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+					<form [formGroup]="registrationForm" (ngSubmit)="onSubmitRegistrationForm()">
+			  <div class="modal-content">
+					  <div class="modal-header">
+							  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							  <h4 class="modal-title text-center">Register your account</h4>
+						  </div>
+				
+						  <div class="modal-body">
+						
+								<div class="row gap-20">	
+															
+									<div class="col-sm-12 col-md-12">
+							
+										<div class="form-group"> 
+											<label>Firstname</label>
+											<input class="form-control" formControlName="firstname" placeholder="First Name" placeholder="Min 4 and Max 10 characters" type="text"> 
+										</div>
+									
+									</div>
+
+									<div class="col-sm-12 col-md-12">
+							
+											<div class="form-group"> 
+												<label>Lastname</label>
+												<input class="form-control" formControlName="lastname" placeholder="Last Name" placeholder="Min 4 and Max 10 characters" type="text"> 
+											</div>
+										
+										</div>
+									
+									<div class="col-sm-12 col-md-12">
+							
+										<div class="form-group"> 
+											<label>Email Address</label>
+											<input class="form-control" formControlName="email" placeholder="Email" placeholder="Enter your email address" type="text"> 
+										</div>
+									
+									</div>
+									
+									<div class="col-sm-12 col-md-12">
+									
+										<div class="form-group"> 
+											<label>Password</label>
+											<input class="form-control" formControlName="password" placeholder="Password" placeholder="Min 8 and Max 20 characters" type="text"> 
+										</div>
+									
+									</div>
+									
+									<div class="col-sm-12 col-md-12">
+									
+										<div class="form-group"> 
+											<label>Password Confirmation</label>
+											<input class="form-control" placeholder="Re-type password again" type="text"> 
+										</div>
+									
+									</div>
+
+									<div class="col-sm-12 col-md-12">
+									
+											<div class="form-group"> 
+												<label>Phone Number</label>
+												<input class="form-control"  formControlName="phonenumber" placeholder="phonenumber" placeholder="Enter Phone Number" type="number"> 
+											</div>
+										
+										</div>
+																
+								</div>
+							
+							</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				  <button type="submit" class="btn btn-primary">Register</button>
+				</div>
+			  </div>
+			</form>
+			</div>
+		  </div>
+ 
+</div>

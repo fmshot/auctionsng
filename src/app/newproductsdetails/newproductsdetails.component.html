@@ -1,0 +1,525 @@
+
+<div class="with-top-header">
+
+	<!-- start Container Wrapper -->
+	<div class="container-wrapper">
+
+		<!-- start Header -->
+		<header id="header">
+	  
+			<!-- start Navbar (Header) -->
+			<nav class="navbar navbar-primary navbar-fixed-top navbar-sticky-function">
+				
+				<div id="top-header">
+			
+					<div class="container">
+					
+						<div class="row">
+						
+							<div class="col-xs-12 col-sm-6 clearfix">
+								
+								
+								<div class="top-header-widget welcome">
+									<p>Welcome | <a href="" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign In</a> or  <a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Register</a> </p>
+								</div>
+							
+							</div>
+							
+							<div class="col-sm-6 clearfix hidden-xs">
+
+								<div class="top-header-widget pull-right">
+									<!-- <a href="#">
+										<i class="fa fa-comments mr-3"></i> Get quote 
+									</a> -->
+								</div>
+								<div class="top-header-widget pull-right">
+									<i class="fa fa-phone"></i> call us: 09069317298								
+								</div>
+								<div class="top-header-widget pull-right">
+									<a (click)="onLogout()">
+										<i class="fa fa-comments mr-3">Logout</i> 
+									</a>
+								</div>
+
+							</div>
+							
+						</div>
+					
+					</div>
+					
+				</div>
+
+				<div class="container">
+						
+					<div class="navbar-header">
+						<a class="navbar-brand" href="index.html"><strong class="text-primary">AUTIONS</strong>ng</a>
+					</div>
+						
+					<div id="navbar" class="collapse navbar-collapse navbar-arrow pull-left">
+					
+						<!-- SEARCH -->
+						<!-- <div id="search-container">
+							<form id="search-form" name="search-form" method="get" action="#">
+								<fieldset>
+									<input type="search" name="search" placeholder="Enter your keyword here and then press enter...">
+								</fieldset>
+							</form>
+						</div>search-container -->
+						
+						<!-- <a class="search-button" href="#"></a> -->
+						
+						<ul class="nav navbar-nav" id="responsive-menu">
+							<li>
+								<a href="#">Home</a>
+							</li>
+							<!-- <li><a [ngx-scroll-to]="'#aboutus'">About Us</a></li> -->
+							<li>
+								<a [ngx-scroll-to]="'#ourcontact'">More Details</a></li>
+							<!-- <li><a [ngx-scroll-to]="'#ourservices'">FAQs</a></li> -->
+							<!-- <li><a [ngx-scroll-to]="'#products'">Products</a></li> -->
+							<li><a (click)='removeShowAuctionButton2=!removeShowAuctionButton2' [ngx-scroll-to]="'#aboutus'">Ongoing Auctions</a></li>
+							<li><a class="error" *ngIf='removeShowAuctionButton2'>{{this.removeShowAuctionButton3}}</a></li>
+							<!-- <div class="error" *ngIf='removeShowAuctionButton2'>
+							 <small>{{this.removeShowAuctionButton3}}</small>
+							
+							  </div> -->
+						</ul>
+						
+					</div><!--/.nav-collapse -->
+
+				</div>
+				
+				<div id="slicknav-mobile"></div>
+				
+			</nav>
+			<!-- end Navbar (Header) -->
+
+    </header>
+
+		<!-- start Main Wrapper -->
+		<div class="main-wrapper scrollspy-container">
+		
+			<div class="breadcrumb-wrapper">
+			
+				<div class="container">
+
+					<div class="row">
+					
+						<div class="col-xs-12 col-sm-6 hidden-xs">
+							<h2 class="page-title">Product Details</h2>
+						</div>
+						
+						<div class="col-xs-12 col-sm-6">
+							<ol class="breadcrumb">
+								<li class="active text">You Are Here:</li>
+								<li><a href="#">Home</a></li>
+								<li class="active">Product Details</li>
+							</ol>
+						</div>
+
+					</div>
+					
+				</div>
+
+			</div>
+		
+			<div class="container-outer">
+			
+				<div class="container">
+				
+					<div class="row gap-25-sm">
+						
+						<div class="col-xs-12 col-sm-8 col-md-9">
+
+							<div class="content-wrapper pb-30 pb-0-xs">
+
+								<div class="detail-titile">
+									<div class="row">
+										<div class="col-xs-12 col-sm-9">
+											<h3 class="car-name">{{viewedProduct?.productname|titlecase}}</h3>
+											<div class="detail-location"><i class="fa fa-map-marker"></i>{{viewedProduct?.productcode}}</div>
+										</div>
+										<div class="col-xs-12 col-sm-3 text-right text-left-xs">
+											 <div class="price text-primary"></div>
+											 <div class="condition"></div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="row gap-5">
+								
+									<div class="col-sm-12 col-md-8">
+									
+										<div class="tab-style-1 detail-tab">
+											<div class="tab-style-1-header clearfix">
+													<ul id="detailTab" class="tab-nav clearfix mb-10-xss">
+														<li class="active"><a href="#detailTab1" data-toggle="tab">All Products</a></li>
+														<a [ngx-scroll-to]="'#productDetails'"><li class="active"> More Details</li></a>
+														<!-- <li><a href="#detailTab2" data-toggle="tab" *ngIf='toJoinAuctions'>Interior</a></li> -->
+													</ul>
+													<!-- <a data-toggle="modal" href="#enquiryModal" class="btn btn-info pull-right pull-left-xss" *ngIf='toJoinAuctions'>Join Auction</a> -->
+													<a (click)= 'allShowProducts = false' class="btn btn-info pull-right pull-left-xss">Ongoing Auctions</a>
+
+											</div>
+											
+											<div id="myTabContent" class="tab-content" >
+											
+												<div class="tab-pane fade in active" id="detailTab1">
+												
+													<div class="tab-content-inner">
+														
+														<div class="slick-gallery-slideshow">
+							
+															<div id='theProduct' class="slider gallery-slideshow gallery-slideshow-not-tab">
+																<div><div class="image"><img [src]=viewedProduct?.productimage alt="image" /></div></div>
+															</div>
+																																	
+														</div>
+
+													</div>
+													
+												</div>														
+											</div>
+
+										</div>
+
+									</div>
+									
+									<div class="col-sm-12 col-md-4">
+									
+										<div class="side-module specification-box">
+								
+											<h3>Specification</h3>
+											
+											<div class="inner">
+											
+												<ul class="specification-list">
+												
+													<li><span class="absolute">Name:</span> {{viewedProduct?.productname|titlecase}}</li>
+													<li><span class="absolute">Code:</span> {{viewedProduct?.productcode}}</li>
+													<li><span class="absolute">Production Year:</span>{{viewedProduct?.year}}</li>
+													<li><span class="absolute">Auction Date:</span>{{viewedProduct?.auctiondate}}</li>
+													<li><span class="absolute">Auction Time:</span>{{viewedProduct?.auctiontime}}</li>
+													<li><span class="absolute">Condition: </span>{{viewedProduct?.condition}}</li>
+													<li><span class="absolute">Status: </span>{{viewedProduct?.status}}</li>
+													<!-- <li class="price"><span class="absolute">Price: </span> $30,000</li> -->
+													
+												</ul>
+												
+											</div>
+
+										</div>
+
+										
+									</div>
+
+								</div>
+
+								<div class="mb-30"></div>
+								
+								<h3 id='productDetails' class="section-title">Product Details</h3>
+								
+								<h4>{{viewedProduct?.productname|titlecase}}</h4>
+												
+								<p>{{viewedProduct?.description|titlecase}}</p>
+
+							</div>
+						
+						</div>
+						
+						<div class="col-xs-12 col-sm-4 col-md-3" *ngIf='allShowProducts'>
+						
+							<aside class="sidebar-wrapper">
+								
+								<div class="row">
+																
+									<div class="col-xss-12 col-xs-6 col-sm-12 col-md-12">
+									
+										<div class="side-module mt-40 mt-0-xs">
+								
+											<h3>All Products</h3>
+											<h3>{{product?.productname}}</h3>
+											
+											<div class="inner">
+									
+												<div class="car-item-sm" *ngFor="let product of allProductsss; let i = index">
+														<!-- <div class="image-bg" style="background-image:url(product?.productimage);"></div> -->
+														<div class="image-bg" style="background-image:url(product?.productimage);"><img [src]=product?.productimage alt="image" /></div>
+														<div class="content">
+															<h6>{{product?.productname}}</h6>
+															<div class="bottom">
+																<ul class="car-meta clearfix">
+																	<li>
+																		<i class="fa fa-cogs"></i>{{product?.productcode}}
+																	</li>
+																	<li>
+																		<i class="fa fa-tachometer"></i> {{product?.year}}
+																	</li>
+																</ul>
+																<a [ngx-scroll-to]="'#theProduct'" routerLink='../{{product?._id}}'  routerLinkActink="active">
+																	<p class="price">View Details</p>
+																</a>
+															</div>
+														</div>
+													</div>
+				
+											</div>
+											
+										</div>
+
+									</div>
+								
+								</div>
+
+							</aside>
+							
+						</div>
+
+
+
+						<!-- for ongoing auctions -->
+
+						<div class="col-xs-12 col-sm-4 col-md-3" *ngIf='!allShowProducts'>
+						
+							<aside class="sidebar-wrapper">
+								
+								<div class="row">
+																
+									<div class="col-xss-12 col-xs-6 col-sm-12 col-md-12">
+									
+										<div class="side-module mt-40 mt-0-xs">
+								
+											<h3>Ongoing Auctions</h3>
+											<h3>{{product?.productname}}</h3>
+											
+											<div class="inner">
+									
+												<div class="car-item-sm" *ngFor="let product of allProductsss; let i = index">
+														<!-- <div class="image-bg" style="background-image:url(product?.productimage);"></div> -->
+														<div class="image-bg" style="background-image:url(product?.productimage);"><img [src]=product?.productimage alt="image" /></div>
+														<div class="content">
+															<h6>{{product?.productname}}</h6>
+															<div class="bottom">
+																<ul class="car-meta clearfix">
+																	<li>
+																		<i class="fa fa-cogs"></i>{{product?.productcode}}
+																	</li>
+																	<li>
+																		<i class="fa fa-tachometer"></i> {{product?.year}}
+																	</li>
+																</ul>
+																<a [ngx-scroll-to]="'#theProduct'" routerLink='../{{product?._id}}'  routerLinkActink="active">
+																	<p class="price">View Details</p>
+																</a>
+															</div>
+														</div>
+													</div>
+				
+											</div>
+											
+										</div>
+
+									</div>
+								
+								</div>
+
+							</aside>
+							
+						</div>
+
+						<!-- End for ongoing auctions -->
+					
+					</div>
+				
+					<div class="mb-70"></div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class="footer-wrapper scrollspy-footer" id='ourcontact'>
+
+			<footer class="main-footer">
+								
+				<div class="container">
+						
+					<div class="row">
+					
+						<div class="col-xs-12 col-sm-12 col-md-3 mb-30-sm">
+						
+							<div class="footer-logo">
+								<a href="#home"><strong class="text-primary">AUCTION</strong>ng</a>
+							</div>
+							
+							<p class="about-us-footer">Our trusworthiness is built from our high level of professionalism, acquired over the years.<a [ngx-scroll-to]="'#aboutus'" class="font-italic">read more</a></p>
+							
+							<div class="social-footer clearfix">
+								<a href="#"><i class="fa fa-facebook-official"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<!-- <a href="#"><i class="fa fa-google-plus "></i></a>
+								<a href="#"><i class="fa fa-codepen"></i></a>
+								<a href="#"><i class="fa fa-behance"></i></a>
+								<a href="#"><i class="fa fa-github"></i></a>
+								<a href="#"><i class="fa fa-jsfiddle"></i></a> -->
+							</div>
+						
+						</div>
+						
+						<div class="col-xs-12 col-sm-12 col-md-3 mb-30-sm">
+							
+							<h4 class="footer-title">Quick Menu</h4>
+							
+							<ul class="menu-footer">
+								<li><a [ngx-scroll-to]="'#aboutus'">About Us</a></li>
+								<!-- <li><a href="#">Partners</a></li> -->
+								<!-- <li><a href="#">Terms</a></li> -->
+								<!-- <li><a href="#">Privacy Policy</a></li> -->
+								<li><a href="#">FAQ</a></li>
+								<!-- <li><a href="#">FAQ</a></li> -->
+								<!-- <li><a href="#">Press</a></li> -->
+								<!-- <li><a href="#">Contact</a></li> -->
+							</ul>
+						
+						</div>
+						
+						<div class="sm-clear"></div>
+						
+						<div class="col-xs-12 col-sm-12 col-md-3  mb-30-sm">
+							
+							<h4 class="footer-title">Office Hours</h4>
+							
+							<ul class="office-hour">
+								<li >
+									Monday - Friday
+									<span>08:00 - 19:00</span>
+								</li>
+								<li >
+									Saturday
+									<span>08:00 - 14:30</span>
+								</li>
+								<li class="text-primary">
+									Sunday
+									<span>Closed</span>
+								</li>
+							</ul>
+
+
+							
+						</div>
+						
+						<div class="col-sm-12 col-md-3">
+
+							<h4 class="footer-title">Address</h4>
+							<p class="footer-address">4, ASSBFFI Road, Alausa, Ikeja, Lagos, Nigeria<br /><span class="block text-white font20 font700 line20 mt-10 mb-5">+234-90693178</span>support@auction.ng.com</p>
+						
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</footer>
+			
+			<footer class="secondary-footer">
+			
+				<div class="container">
+				
+					<div class="row">
+					
+						<div class="col-sm-6">
+							<p class="copy-right">&#169; Copyright 2016 AUCTION.ng</p>
+						</div>
+						
+						<div class="col-sm-6">
+							<ul class="secondary-footer-menu clearfix">
+								<li><a href="" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign-in</a></li>
+								<li><a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Sign-up</a></li>
+								<!-- <li><a href="#">Sign-up</a></li> -->
+							</ul>
+						</div>
+						
+					</div>
+				
+				</div>
+				
+			</footer>
+			
+		</div>
+		<!-- end footer-wrapper -->
+		
+		
+	</div> <!-- / .wrapper -->
+	<!-- end Container Wrapper -->
+ 
+
+<div id="enquiryModal" class="modal border-transparent fade container-sm" tabindex="-1" data-replace="true">
+	<form class="modal-container">
+		<div class="modal-header"> 
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h4 class="modal-title text-center">Enquiry For This Car</h4>
+		</div>
+		<div class="modal-body">
+			<div class="car-item-sm for-enquiry">
+				<a href="#">
+					<div class="image-bg" style="background-image:url('images/detail-gallery/exterior/04-sm.jpg');"></div>
+					<div class="content">
+						<h5>2016 Honda Civic Sedan</h5>
+						<div class="bottom">
+							<ul class="car-meta clearfix">
+								<li data-toggle="tooltip" data-placement="top" title="yeas: 2013">
+									<i class="fa fa-car"></i> Used Car
+								</li>
+								<li data-toggle="tooltip" data-placement="top" title="mile: 120000 KM">
+									<i class="fa fa-tachometer"></i> 120000
+								</li>
+							</ul>
+							<p class="price">20,887$</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<p>Received overcame oh sensible so at an. Formed do change merely to county it. Am separate contempt domestic to to oh.</p>
+			<div class="form-horizontal">
+				<div class="form-group row gap-15">
+					<label for="inputEmail1" class="col-sm-4 control-label">Full Name:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control mb-0" id="inputEmail1" placeholder="Full Name">
+					</div>
+				</div>
+				<div class="form-group row gap-15">
+					<label for="inputEmail2" class="col-sm-4 control-label">Phone Number:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control mb-0" id="inputEmail2" placeholder="Phone Number">
+					</div>
+				</div>
+				<div class="form-group row gap-15">
+					<label for="inputEmail3" class="col-sm-4 control-label">Email Address:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control mb-0" id="inputEmail3" placeholder="Email Address">
+					</div>
+				</div>
+				<div class="form-group row gap-15">
+					<label for="inputEmail3" class="col-sm-4 control-label">Message:</label>
+					<div class="col-sm-8">
+						<textarea class="form-control mb-0" rows="5" placeholder="Message"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer text-left">
+				<button type="button" class="btn btn-sm btn-primary">Sent</button>
+				<button type="button" class="btn btn-sm btn-warning" data-dismiss="modal" aria-hidden="true">Close</button>
+		</div>
+	</form>
+</div>
+	
+
+ 
+<!-- start Back To Top -->
+<div id="back-to-top">
+   <a href="#"><i class="ion-ios-arrow-up"></i></a>
+</div>
+<!-- end Back To Top -->
+</div>

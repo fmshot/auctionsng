@@ -1,0 +1,407 @@
+
+<div class="with-top-header">
+
+	<!-- start Container Wrapper -->
+	<div class="container-wrapper">
+
+		<!-- start Header -->
+		<header id="header">
+	  
+			<!-- start Navbar (Header) -->
+			<nav class="navbar navbar-primary navbar-fixed-top navbar-sticky-function">
+				
+				<div id="top-header">
+			
+					<div class="container">
+					
+						<div class="row">
+						
+							<div class="col-xs-12 col-sm-6 clearfix">
+								
+								
+								<div class="top-header-widget welcome">
+									<p>Welcome | <a href="" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign In</a> or  <a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Register</a> </p>
+								</div>
+							
+							</div>
+							
+							<div class="col-sm-6 clearfix hidden-xs">
+
+								<div class="top-header-widget pull-right">
+									<!-- <a href="#">
+										<i class="fa fa-comments mr-3"></i> Get quote 
+									</a> -->
+								</div>
+								<div class="top-header-widget pull-right">
+									<i class="fa fa-phone"></i> call us: 09069317298								
+								</div>
+								<div class="top-header-widget pull-right">
+									<a (click)="onLogout()">
+										<i class="fa fa-comments mr-3">Logout</i> 
+									</a>
+								</div>
+
+							</div>
+							
+						</div>
+					
+					</div>
+					
+				</div>
+
+				<div class="container">
+						
+					<div class="navbar-header">
+						<a class="navbar-brand" href="index.html"><strong class="text-primary">AUTIONS</strong>ng</a>
+					</div>
+						
+					<div id="navbar" class="collapse navbar-collapse navbar-arrow pull-left">
+					
+						<!-- SEARCH -->
+						<!-- <div id="search-container">
+							<form id="search-form" name="search-form" method="get" action="#">
+								<fieldset>
+									<input type="search" name="search" placeholder="Enter your keyword here and then press enter...">
+								</fieldset>
+							</form>
+						</div>search-container -->
+						
+						<!-- <a class="search-button" href="#"></a> -->
+						
+						<ul class="nav navbar-nav" id="responsive-menu">
+							<li>
+								<a href="#">Home</a>
+							</li>
+							<li><a [ngx-scroll-to]="'#aboutus'">About Us</a></li>
+							<li>
+								<!-- <a [ngx-scroll-to]="'#ourcontact'">Our Contacts</a></li> -->
+							<!-- <li><a [ngx-scroll-to]="'#ourservices'">FAQs</a></li> -->
+							<li><a [ngx-scroll-to]="'#products'">Products</a></li>
+							<li><a routerLink="" routerLinkActive="">All Ongoing Auctions</a></li>
+						</ul>
+						
+					</div><!--/.nav-collapse -->
+
+				</div>
+				
+				<div id="slicknav-mobile"></div>
+				
+			</nav>
+			<!-- end Navbar (Header) -->
+
+    </header>
+
+		<!-- start Main Wrapper -->
+		<div class="main-wrapper scrollspy-container">
+		
+			<div class="breadcrumb-wrapper">
+			
+				<div class="container">
+
+					<div class="row">
+					
+						<div class="col-xs-12 col-sm-6 hidden-xs">
+							<h2 class="page-title">Bids</h2>
+						</div>
+						
+						<div class="col-xs-12 col-sm-6">
+							<ol class="breadcrumb">
+								<li class="active text">You Are Here:</li>
+								<li><a href="#">Home</a></li>
+								<li class="active">Bids</li>
+							</ol>
+						</div>
+
+					</div>
+					
+				</div>
+
+			</div>
+		
+			<div class="container-outer">
+			
+				<div class="container">
+				
+					<div class="row">
+						
+							<div class="col-xs-12 col-sm-8 col-md-6">
+
+									<div class="content-wrapper pb-0-xs" style="padding-right: 10px">
+		
+										<div class="detail-titile">
+											<div class="row">
+												<div class="col-xs-12 col-sm-9">
+													<!-- <h3 class="car-name">Time: {{viewedAuction?.time}}</h3> -->
+													<h4 class="car-name">Time: {{auctionTimer}}</h4>
+													<!-- <h3 class="car-name">Time: {{viewedAuctionParsed?.productcode}}</h3> -->
+													<!-- <h3 class="car-name">Time: {{viewedAuctionParsed?.productname}}</h3> -->
+													<!-- <div class="detail-location"><i class="fa fa-map-marker"></i> Bangkapi, Bangkok</div> -->
+												</div>
+												<div class="col-xs-12 col-sm-3 text-right text-left-xs">
+													 <div class="price text-primary">{{minimumBidAmount|number}}</div>
+													 <!-- <div class="condition">New Car</div> -->
+												</div>
+											</div>
+										</div>
+										
+										<div class="row">
+												<div class="tab-style-1-header clearfix">
+														<ul id="detailTab" class="tab-nav clearfix mb-10-xss">
+															<!-- <li class="active"><a href="#detailTab1" data-toggle="tab">Exterior</a></li> -->
+															
+															<!-- <li><a href="#detailTab2" data-toggle="tab">Interior</a></li> -->
+														</ul><span class="pull-right">Minimum Amount : &#8358; {{minimumBidAmount|number}}</span>
+														<!-- <a data-toggle="modal" href="#enquiryModal" class="btn btn-info pull-right pull-left-xss">Enquiry Now</a> -->
+												</div>
+											<!-- <div class="col-xs-12 col-sm-4 col-md-12"> -->
+													<!-- <div class="side-module mt-1 mt-0-xs"> -->
+															<!-- <span class="pull-right text-right">Minimum Amount : &#8358; {{minimumBidAmount|number}}</span> -->
+															<!-- <h3>Your recent viewed</h3>	 -->
+												<div class="inner">
+											
+															<div class="car-item-sm">
+																
+																	<div class="content">
+																			<img [src]=viewedAuctionParsed?.productimage alt="Product image">
+														  </div>
+														  </div>
+														  </div>
+														  <!-- </div> -->
+																	
+								<!-- </div> -->
+		
+										<div class="mb-30"></div>
+										
+										<h3 class="section-title">Description</h3>
+										
+										<!-- <h5>{{viewedAuctionParsed?.productname}}</h5> -->
+														
+										<p>{{viewedAuctionParsed?.description}}</p>
+		
+										<!-- <p>uy</p> -->
+		
+																	
+									</div>
+								
+								</div>
+								
+								
+							
+							</div>
+
+							<div class="col-xs-12 col-sm-8 col-md-6">
+
+									<div class="content-wrapper pb-0-xs" style="padding-left: 10px">
+		
+										<div class="detail-titile">
+											<div class="row">
+												<div class="col-xs-12 col-sm-9">
+													<h4 class="car-name">{{viewedAuctionParsed?.productname}}</h4>
+													<!-- <div class="detail-location"><i class="fa fa-map-marker"></i> Bangkapi, Bangkok</div> -->
+												</div>
+												<div class="col-xs-12 col-sm-3 text-right text-left-xs">
+													 <div class="price text-primary">{{minimumBidAmount|number}}</div>
+													 <!-- <div class="condition">New Car</div> -->
+												</div>
+											</div>
+										</div>
+										
+										<div class="row">
+												<div class="tab-style-1-header clearfix">
+														<ul id="detailTab" class="tab-nav clearfix mb-10-xss">
+															<li class="active"><a href="#detailTab1" data-toggle="tab">Exterior</a></li>
+															
+															<!-- <li><a href="#detailTab2" data-toggle="tab">Interior</a></li> -->
+														</ul><span class="pull-right">Minimum Amount : &#8358; {{minimumBidAmount|number}}</span>
+														<!-- <a data-toggle="modal" href="#enquiryModal" class="btn btn-info pull-right pull-left-xss">Enquiry Now</a> -->
+												</div>
+											<!-- <div class="col-xs-12 col-sm-4 col-md-12"> -->
+													<div class="side-module mt-1 mt-0-xs">
+															<!-- <span class="pull-right text-right">Minimum Amount : &#8358; {{minimumBidAmount|number}}</span> -->
+															<!-- <h3>Your recent viewed</h3>	 -->
+												<div class="inner">
+											
+															<div class="car-item-sm">
+																
+																	<div class="content">
+													<div class="chats">
+															<div class="chatbox">
+															  <div *ngFor="let bid of allBids">
+																<div class="message sent" *ngIf='bid?.userObject?.email == parsedUser?.email'>
+																  &#8358;{{bid?.finalbid|number}}
+																  <span class="metadata">
+																	<!-- <span class="time">{{chat.createdAt | date: 'HH:mm aaa'}}</span> -->
+																	<span class="time">{{bid?.den}}</span>
+																	<span class="time">Me</span>
+																	<!-- <span class="time">new Date().getTime()</span> -->
+																  </span>
+																</div>
+																<div class="message received" *ngIf='bid?.userObject?.email !== parsedUser?.email'>
+																  <strong>{{bid?.userObject?.email}}</strong> <br>
+																  &#x20a6;{{bid?.finalbid|number}}
+																  <span class="metadata">
+																	<!-- <span class="time">{{chat.createdAt | date: 'HH:mm aaa'}}</span> -->
+																  </span>
+																</div>
+																<!-- <p align="center" class="joined"  *ngIf="chat.type==='joined'">
+																<span class="rounded bg-primary text-white">{{chat.displayName}} Joined</span>
+																</p> -->
+															  </div>
+															</div>
+													  
+															<div class="d-flex flex-row">    
+															  <input  type="number" #bid_amount id='bidId' class="form-control" placeholder="Enter Amount" style="margin-right: 10px">
+															  <button class="comment" [disabled]="sending || auctionClosed" (click)="sendComment(bid_amount.value)" class="btn btn-primary"> {{sending ? 'Sending' : 'Send'}}</button>
+															</div>
+															<div class="error" *ngIf='showError'>
+															<!-- <span class=""> -->
+															  <small>{{wrongInput}}</small>
+															  
+														  </div>
+														  </div>
+														  </div>
+														  </div>
+														  </div>
+														  </div>
+								
+									
+		
+																	
+									</div>
+								
+								</div>
+								
+								
+							
+							</div>
+				
+				
+
+					<!-- <div class="mb-70"></div>-->
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class="footer-wrapper scrollspy-footer" id='ourcontact'>
+
+			<footer class="main-footer">
+								
+				<div class="container">
+						
+					<div class="row">
+					
+						<div class="col-xs-12 col-sm-12 col-md-3 mb-30-sm">
+						
+							<div class="footer-logo">
+								<a href="#home"><strong class="text-primary">AUCTION</strong>ng</a>
+							</div>
+							
+							<p class="about-us-footer">Our trusworthiness is built from our high level of professionalism, acquired over the years.<a [ngx-scroll-to]="'#aboutus'" class="font-italic">read more</a></p>
+							
+							<div class="social-footer clearfix">
+								<a href="#"><i class="fa fa-facebook-official"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<!-- <a href="#"><i class="fa fa-google-plus "></i></a>
+								<a href="#"><i class="fa fa-codepen"></i></a>
+								<a href="#"><i class="fa fa-behance"></i></a>
+								<a href="#"><i class="fa fa-github"></i></a>
+								<a href="#"><i class="fa fa-jsfiddle"></i></a> -->
+							</div>
+						
+						</div>
+						
+						<div class="col-xs-12 col-sm-12 col-md-3 mb-30-sm">
+							
+							<h4 class="footer-title">Quick Menu</h4>
+							
+							<ul class="menu-footer">
+								<li><a [ngx-scroll-to]="'#aboutus'">About Us</a></li>
+								<!-- <li><a href="#">Partners</a></li> -->
+								<!-- <li><a href="#">Terms</a></li> -->
+								<!-- <li><a href="#">Privacy Policy</a></li> -->
+								<li><a href="#">FAQ</a></li>
+								<!-- <li><a href="#">FAQ</a></li> -->
+								<!-- <li><a href="#">Press</a></li> -->
+								<!-- <li><a href="#">Contact</a></li> -->
+							</ul>
+						
+						</div>
+						
+						<div class="sm-clear"></div>
+						
+						<div class="col-xs-12 col-sm-12 col-md-3  mb-30-sm">
+							
+							<h4 class="footer-title">Office Hours</h4>
+							
+							<ul class="office-hour">
+								<li >
+									Monday - Friday
+									<span>08:00 - 19:00</span>
+								</li>
+								<li >
+									Saturday
+									<span>08:00 - 14:30</span>
+								</li>
+								<li class="text-primary">
+									Sunday
+									<span>Closed</span>
+								</li>
+							</ul>
+
+
+							
+						</div>
+						
+						<div class="col-sm-12 col-md-3">
+
+							<h4 class="footer-title">Address</h4>
+							<p class="footer-address">4, ASSBFFI Road, Alausa, Ikeja, Lagos, Nigeria<br /><span class="block text-white font20 font700 line20 mt-10 mb-5">+234-90693178</span>support@auction.ng.com</p>
+						
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</footer>
+			
+			<footer class="secondary-footer">
+			
+				<div class="container">
+				
+					<div class="row">
+					
+						<div class="col-sm-6">
+							<p class="copy-right">&#169; Copyright 2016 AUCTION.ng</p>
+						</div>
+						
+						<div class="col-sm-6">
+							<ul class="secondary-footer-menu clearfix">
+								<li><a href="" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign-in</a></li>
+								<li><a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Sign-up</a></li>
+								<!-- <li><a href="#">Sign-up</a></li> -->
+							</ul>
+						</div>
+						
+					</div>
+				
+				</div>
+				
+			</footer>
+			
+		</div>
+		<!-- end footer-wrapper -->
+		
+		<div class="tab-style-1-header clearfix">
+				<ul id="detailTab" class="tab-nav clearfix mb-10-xss">
+					<li class="active"><a href="#detailTab1" data-toggle="tab">Exterior</a></li>
+					<!-- <li><a href="#detailTab2" data-toggle="tab">Interior</a></li> -->
+				</ul>
+				<!-- <a data-toggle="modal" href="#enquiryModal" class="btn btn-info pull-right pull-left-xss">Enquiry Now</a> -->
+		</div>
+	</div> <!-- / .wrapper -->
+  <!-- end Container Wrapper -->
+</div>

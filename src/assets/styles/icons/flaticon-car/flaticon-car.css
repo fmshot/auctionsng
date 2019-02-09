@@ -1,0 +1,392 @@
+@font-face {
+	font-family: "Flaticon Car";
+	src: url("flaticon-car.eot");
+	src: url("flaticon-card41d.eot?#iefix") format("embedded-opentype"),
+	url("flaticon-car.woff") format("woff"),
+	url("flaticon-car.ttf") format("truetype"),
+	url(flaticon-car.html) format("svg");
+	font-weight: normal;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class^="flaticon-car-"]:before {
+	font-family: "Flaticon Car";
+	font-style: normal;
+	font-weight: normal;
+}
+.flaticon-car-black-1:before {
+	content: "\e001";
+}
+.flaticon-car-black-10:before {
+	content: "\e002";
+}
+.flaticon-car-black-11:before {
+	content: "\e003";
+}
+.flaticon-car-black-12:before {
+	content: "\e004";
+}
+.flaticon-car-black-13:before {
+	content: "\e005";
+}
+.flaticon-car-black-14:before {
+	content: "\e006";
+}
+.flaticon-car-black-15:before {
+	content: "\e007";
+}
+.flaticon-car-black-16:before {
+	content: "\e008";
+}
+.flaticon-car-black-17:before {
+	content: "\e009";
+}
+.flaticon-car-black-18:before {
+	content: "\e00a";
+}
+.flaticon-car-black-19:before {
+	content: "\e00b";
+}
+.flaticon-car-black-2:before {
+	content: "\e00c";
+}
+.flaticon-car-black-20:before {
+	content: "\e00d";
+}
+.flaticon-car-black-21:before {
+	content: "\e00e";
+}
+.flaticon-car-black-22:before {
+	content: "\e00f";
+}
+.flaticon-car-black-3:before {
+	content: "\e010";
+}
+.flaticon-car-black-4:before {
+	content: "\e011";
+}
+.flaticon-car-black-5:before {
+	content: "\e012";
+}
+.flaticon-car-black-6:before {
+	content: "\e013";
+}
+.flaticon-car-black-7:before {
+	content: "\e014";
+}
+.flaticon-car-black-8:before {
+	content: "\e015";
+}
+.flaticon-car-black-9:before {
+	content: "\e016";
+}
+.flaticon-car-black:before {
+	content: "\e017";
+}
+.flaticon-car-car-1:before {
+	content: "\e018";
+}
+.flaticon-car-car-2:before {
+	content: "\e019";
+}
+.flaticon-car-car-3:before {
+	content: "\e01a";
+}
+.flaticon-car-car-4:before {
+	content: "\e01b";
+}
+.flaticon-car-car-5:before {
+	content: "\e01c";
+}
+.flaticon-car-car-6:before {
+	content: "\e01d";
+}
+.flaticon-car-car-7:before {
+	content: "\e01e";
+}
+.flaticon-car-car:before {
+	content: "\e01f";
+}
+.flaticon-car-clock:before {
+	content: "\e020";
+}
+.flaticon-car-money-1:before {
+	content: "\e021";
+}
+.flaticon-car-money:before {
+	content: "\e022";
+}
+.flaticon-car-shape:before {
+	content: "\e023";
+}
+.flaticon-car-silhouette:before {
+	content: "\e024";
+}
+.flaticon-car-technology:before {
+	content: "\e025";
+}
+.flaticon-car-tool-1:before {
+	content: "\e026";
+}
+.flaticon-car-tool-2:before {
+	content: "\e027";
+}
+.flaticon-car-tool-3:before {
+	content: "\e028";
+}
+.flaticon-car-tool:before {
+	content: "\e029";
+}
+.flaticon-car-transport-1:before {
+	content: "\e02a";
+}
+.flaticon-car-transport-10:before {
+	content: "\e02b";
+}
+.flaticon-car-transport-11:before {
+	content: "\e02c";
+}
+.flaticon-car-transport-12:before {
+	content: "\e02d";
+}
+.flaticon-car-transport-13:before {
+	content: "\e02e";
+}
+.flaticon-car-transport-14:before {
+	content: "\e02f";
+}
+.flaticon-car-transport-15:before {
+	content: "\e030";
+}
+.flaticon-car-transport-16:before {
+	content: "\e031";
+}
+.flaticon-car-transport-17:before {
+	content: "\e032";
+}
+.flaticon-car-transport-18:before {
+	content: "\e033";
+}
+.flaticon-car-transport-19:before {
+	content: "\e034";
+}
+.flaticon-car-transport-2:before {
+	content: "\e035";
+}
+.flaticon-car-transport-20:before {
+	content: "\e036";
+}
+.flaticon-car-transport-21:before {
+	content: "\e037";
+}
+.flaticon-car-transport-22:before {
+	content: "\e038";
+}
+.flaticon-car-transport-23:before {
+	content: "\e039";
+}
+.flaticon-car-transport-24:before {
+	content: "\e03a";
+}
+.flaticon-car-transport-25:before {
+	content: "\e03b";
+}
+.flaticon-car-transport-26:before {
+	content: "\e03c";
+}
+.flaticon-car-transport-27:before {
+	content: "\e03d";
+}
+.flaticon-car-transport-28:before {
+	content: "\e03e";
+}
+.flaticon-car-transport-29:before {
+	content: "\e03f";
+}
+.flaticon-car-transport-3:before {
+	content: "\e040";
+}
+.flaticon-car-transport-30:before {
+	content: "\e041";
+}
+.flaticon-car-transport-31:before {
+	content: "\e042";
+}
+.flaticon-car-transport-32:before {
+	content: "\e043";
+}
+.flaticon-car-transport-33:before {
+	content: "\e044";
+}
+.flaticon-car-transport-34:before {
+	content: "\e045";
+}
+.flaticon-car-transport-35:before {
+	content: "\e046";
+}
+.flaticon-car-transport-36:before {
+	content: "\e047";
+}
+.flaticon-car-transport-37:before {
+	content: "\e048";
+}
+.flaticon-car-transport-38:before {
+	content: "\e049";
+}
+.flaticon-car-transport-39:before {
+	content: "\e04a";
+}
+.flaticon-car-transport-4:before {
+	content: "\e04b";
+}
+.flaticon-car-transport-40:before {
+	content: "\e04c";
+}
+.flaticon-car-transport-41:before {
+	content: "\e04d";
+}
+.flaticon-car-transport-42:before {
+	content: "\e04e";
+}
+.flaticon-car-transport-43:before {
+	content: "\e04f";
+}
+.flaticon-car-transport-44:before {
+	content: "\e050";
+}
+.flaticon-car-transport-45:before {
+	content: "\e051";
+}
+.flaticon-car-transport-46:before {
+	content: "\e052";
+}
+.flaticon-car-transport-47:before {
+	content: "\e053";
+}
+.flaticon-car-transport-48:before {
+	content: "\e054";
+}
+.flaticon-car-transport-49:before {
+	content: "\e055";
+}
+.flaticon-car-transport-5:before {
+	content: "\e056";
+}
+.flaticon-car-transport-50:before {
+	content: "\e057";
+}
+.flaticon-car-transport-51:before {
+	content: "\e058";
+}
+.flaticon-car-transport-52:before {
+	content: "\e059";
+}
+.flaticon-car-transport-53:before {
+	content: "\e05a";
+}
+.flaticon-car-transport-54:before {
+	content: "\e05b";
+}
+.flaticon-car-transport-55:before {
+	content: "\e05c";
+}
+.flaticon-car-transport-56:before {
+	content: "\e05d";
+}
+.flaticon-car-transport-57:before {
+	content: "\e05e";
+}
+.flaticon-car-transport-58:before {
+	content: "\e05f";
+}
+.flaticon-car-transport-59:before {
+	content: "\e060";
+}
+.flaticon-car-transport-6:before {
+	content: "\e061";
+}
+.flaticon-car-transport-60:before {
+	content: "\e062";
+}
+.flaticon-car-transport-61:before {
+	content: "\e063";
+}
+.flaticon-car-transport-62:before {
+	content: "\e064";
+}
+.flaticon-car-transport-63:before {
+	content: "\e065";
+}
+.flaticon-car-transport-64:before {
+	content: "\e066";
+}
+.flaticon-car-transport-65:before {
+	content: "\e067";
+}
+.flaticon-car-transport-66:before {
+	content: "\e068";
+}
+.flaticon-car-transport-67:before {
+	content: "\e069";
+}
+.flaticon-car-transport-68:before {
+	content: "\e06a";
+}
+.flaticon-car-transport-69:before {
+	content: "\e06b";
+}
+.flaticon-car-transport-7:before {
+	content: "\e06c";
+}
+.flaticon-car-transport-70:before {
+	content: "\e06d";
+}
+.flaticon-car-transport-71:before {
+	content: "\e06e";
+}
+.flaticon-car-transport-72:before {
+	content: "\e06f";
+}
+.flaticon-car-transport-73:before {
+	content: "\e070";
+}
+.flaticon-car-transport-74:before {
+	content: "\e071";
+}
+.flaticon-car-transport-75:before {
+	content: "\e072";
+}
+.flaticon-car-transport-8:before {
+	content: "\e073";
+}
+.flaticon-car-transport-9:before {
+	content: "\e074";
+}
+.flaticon-car-transport:before {
+	content: "\e075";
+}
+.flaticon-car-two:before {
+	content: "\e076";
+}
+.flaticon-car-vehicle-1:before {
+	content: "\e077";
+}
+.flaticon-car-vehicle-2:before {
+	content: "\e078";
+}
+.flaticon-car-vehicle-3:before {
+	content: "\e079";
+}
+.flaticon-car-vehicle-4:before {
+	content: "\e07a";
+}
+.flaticon-car-vehicle-5:before {
+	content: "\e07b";
+}
+.flaticon-car-vehicle-6:before {
+	content: "\e07c";
+}
+.flaticon-car-vehicle:before {
+	content: "\e07d";
+}
