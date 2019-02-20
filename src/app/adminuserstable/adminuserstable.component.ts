@@ -15,7 +15,9 @@ declare const $: any;
   providers: [RegistrationService]
 })
 export class AdminuserstableComponent implements OnInit {
+  public addNewUsersForm: FormGroup;
   public currentUser ={};
+  public allUserss: any = [];
   public allUsers: any = [];
   public usersToEdit = null;
   public editorReady: boolean;
@@ -26,33 +28,21 @@ export class AdminuserstableComponent implements OnInit {
 
   }
 
-  // static productsForm = () => {
-  //   return {
-  //     productname: ["", Validators.required],
-  //     productcode: ["", Validators.required],
-  //     minauctionprice: ["", Validators.required],
-  //     description: [""],
-  //     productimage: [""],
-  //     auctiondate: [ "", Validators.required],
-  //     auctiontime: [ "", Validators.required],
-  //     // finalamountbidded: ["", Val,,idators.required],
-  //   }
-  // }
-  // static editProductsForm = () => {
-  //   return {
-  //     productname: ["", Validators.required],
-  //     productcode: ["", Validators.required],
-  //     minauctionprice: ["", Validators.required],
-  //     // finalamountbidded: ["", Validators.required],
-  //   }
-  // }
+ static addNewUsersForm = () => {
+    return {
+      firstname: [""],
+      lastname: [""],
+      email: [""],
+      password: [""],
+      phonenumber: [""],
+     }
+  }
 
 
   constructor(private registrationService: RegistrationService,
               private fb: FormBuilder)
   {
-    // this.productsForm = this.fb.group(AdminuserstableComponent.productsForm());
-    // this.editProductsForm = this.fb.group(AdminuserstableComponent.editProductsForm());
+    this.addNewUsersForm = this.fb.group(AdminuserstableComponent.addNewUsersForm());
   }
 
   ngOnInit() {
@@ -140,6 +130,28 @@ export class AdminuserstableComponent implements OnInit {
   //     console.log('oiuyfdfghkjl', err)
   //   });
   // }
+
+
+
+ //for submitting new user
+ onSubmitAddNewUsersForm() {
+  this.load.requesting = true;
+  this.registrationService.postRegistration(this.addNewUsersForm.value).subscribe(
+    (res) => {
+      this.load.requesting = false;
+      this.allUserss.push(res);
+      this.addNewUsersForm.reset();
+
+     },
+    (error) => {
+      this.load.requesting = false;
+
+    },
+    () => {
+
+    });
+}
+//for submitting new user
 
 }
 

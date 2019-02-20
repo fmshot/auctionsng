@@ -67,14 +67,14 @@
 							<li>
 								<a href="#">Home</a>
 							</li>
-							<li><a [ngx-scroll-to]="'#aboutus'">About Us</a></li>
+							<li><a [ngx-scroll-to]="'#aboutus'" style="cursor: pointer">About</a></li>
 							<li>
-								<a [ngx-scroll-to]="'#ourcontact'">Our Contacts</a></li>
-							<!-- <li><a [ngx-scroll-to]="'#ourservices'">FAQs</a></li> -->
-							<li><a [ngx-scroll-to]="'#products'">Products</a></li>
+								<!-- <a [ngx-scroll-to]="'#ourcontact'" style="cursor: pointer">Contacts</a></li> -->
+							<li><a routerLink='../faq' routerLinkActive="active">FAQs</a></li>
+							<li><a [ngx-scroll-to]="'#products'" style="cursor: pointer">Products</a></li>
 							<!-- <li><a data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Login</a></li> -->
 							<!-- <li><a data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Register</a></li> -->
-							<li><a (click)='removeShowAuctionButton2=!removeShowAuctionButton2'>Ongoing Auctions</a></li>
+							<li><a (click)='removeShowAuctionButton2=!removeShowAuctionButton2' style="cursor: pointer">Ongoing Auctions</a></li>
 							<li><a class="error" *ngIf='removeShowAuctionButton2'>{{this.removeShowAuctionButton3}}</a></li>
 
 						</ul>
@@ -259,11 +259,11 @@
 											</div>
 											<div class="bottom">
 												<ul class="car-meta clearfix">
-													<li>
+													<!-- <li>
 														<i class="fa fa-cogs"></i>
-													</li>
+													</li> -->
 													<li>
-														<a routerLink='../adminproductdetails/{{product?._id}}' routerLinkActive="active"><i class="fa fa-tachometer"></i>More Details</a>
+														<a routerLink='../adminproductdetails/{{product?._id}}' routerLinkActive="active"><i class="fa fa-navicon"></i> More Details</a>
 													</li>
 												</ul>
 											</div>
@@ -458,7 +458,7 @@
 <!-- end Back To Top -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
-				<form class="" [formGroup]="userAccessForm" (ngSubmit)="onSubmitUserAccess()">			
+				<form class="" [formGroup]="userAccessForm">			
 		  <div class="modal-content">
 				  <div class="modal-header">
 						  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -480,7 +480,7 @@
 					  
 						  <div class="form-group"> 
 							  <label>Password</label>
-							  <input class="form-control" formControlName="password" placeholder="Password"placeholder="Min 4 and Max 10 characters" type="text"> 
+							  <input class="form-control" formControlName="password" placeholder="Password"placeholder="Min 4 and Max 10 characters" type="password"> 
 						  </div>
 					  
 					  </div>
@@ -495,8 +495,8 @@
 				  </div>
 			  </div>
 			<div class="modal-footer">
-			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			  <button type="submit" class="btn btn-primary" >Login</button>
+			  <button type="button" class="btn btn-secondary" id="close_modal" data-dismiss="modal">Close</button>
+			  <button type="submit" (click)="onSubmitUserAccess()"class="btn btn-primary">Login</button>
 			</div>
 		  </div>
 		</form>
@@ -547,7 +547,7 @@
 									
 										<div class="form-group"> 
 											<label>Password</label>
-											<input class="form-control" formControlName="password" placeholder="Password" placeholder="Min 8 and Max 20 characters" type="text"> 
+											<input class="form-control" formControlName="password" placeholder="Password" placeholder="Min 8 and Max 20 characters" type="password"> 
 										</div>
 									
 									</div>
@@ -556,7 +556,7 @@
 									
 										<div class="form-group"> 
 											<label>Password Confirmation</label>
-											<input class="form-control" placeholder="Re-type password again" type="text"> 
+											<input class="form-control" placeholder="Re-type password again" type="password"> 
 										</div>
 									
 									</div>
@@ -575,7 +575,7 @@
 							</div>
 				<div class="modal-footer">
 				  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				  <button type="submit" class="btn btn-primary">Register</button>
+				  <button type="submit"class="btn btn-primary"data-dismiss="modal">Register</button>
 				</div>
 			  </div>
 			</form>

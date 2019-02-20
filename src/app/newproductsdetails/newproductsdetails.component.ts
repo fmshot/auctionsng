@@ -15,6 +15,7 @@ import {AuctionService} from "../shared/auction.service";
 
 })
 export class NewproductsdetailsComponent implements OnInit {
+  public iWillShowAuctions: boolean = false;
   public allShowProducts: boolean;
   // public removeShowAuctionButton3 = 'please login to view auctions!';
   // public removeShowAuctionButton2: boolean = false;
@@ -110,7 +111,9 @@ export class NewproductsdetailsComponent implements OnInit {
   }
 
 
-
+  public allShowOngoings() {
+  localStorage.setItem('forauctions', 'TRUE');
+  }
 
   public backToDashboard() {
     this.router.navigateByUrl('/userdashboard')

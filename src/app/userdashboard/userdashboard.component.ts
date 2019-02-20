@@ -18,6 +18,8 @@ import { ReturnStatement } from '@angular/compiler';
   providers: [AdminproductService, AuctionuserService]
 })
 export class UserdashboardComponent implements OnInit {
+  public showMeAuctions: boolean = false;
+  public pro: any;
   public usersAuctionMine: any;
   public parsedonGoingAuctions: any;
   public onGoings: any;
@@ -76,6 +78,9 @@ export class UserdashboardComponent implements OnInit {
 //   }
 
   ngOnInit() {
+    if(localStorage.getItem('forauctions')) {
+      this.showAuctions = true;
+    }
     this.currentRegisteredUser = JSON.parse(localStorage.getItem('currentRegistered_User'));
     this.currentUser = JSON.parse(localStorage.getItem('current_user'));
     this.getAuctions();
@@ -92,7 +97,7 @@ export class UserdashboardComponent implements OnInit {
 
 
 
- //for users' login submit
+ //for users' logout button
  onLogout() {
   // this.load.requesting = true;
   // this.currentonlineuserService.postCurrentonlineuser(this.userAccessForm.value).subscribe(
@@ -145,14 +150,23 @@ arrayLimit = Math.floor(arrayLimit);
             //   auction.productObject = JSON.parse(auction.productObject);
             // }
             userauction.auctionproduct =  JSON.parse(userauction.auctionproduct);
+            console.log('s', response);
+            // response.auctionproduct.productobject =  JSON.parse(userauction.auctionproduct.productobject);
+            return;
+          });
+          response.forEach( (userauction) => {
             userauction.auctionproduct.productObject =  JSON.parse(userauction.auctionproduct.productObject);
+            console.log('ps', response);
             if (count < arrayLimit) {
               firstFourAuctions.push(userauction.auctionproduct);
             }
             count++;
            });
+           
 this.firstFourAuctions = firstFourAuctions;
           console.log('firstFourAuctions', this.firstFourAuctions);
+          console.log('first', response);
+          console.log('second', response);
           // let email;
           // let auct;
           // console.table(response);

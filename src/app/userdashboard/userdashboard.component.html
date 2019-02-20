@@ -66,20 +66,20 @@
 							</form>
 						</div><!-- search-container -->
 						
-						<a class="search-button" href="#"></a>
+						<!-- <a class="search-button" href="#"></a> -->
 						
 						<ul class="nav navbar-nav" id="responsive-menu">
 							<li>
-								<a href="#" style="cursor: pointer">Home</a>
+								<a href="" style="cursor: pointer">Home</a>
 							</li>
 							
 							<!-- <li>
 								<a href="blog.html">FAQs</a>
 								
 							</li> -->
-							<li><a [ngx-scroll-to]="'#aboutus'" style="cursor: pointer">About Us</a></li>
+							<!-- <li><a [ngx-scroll-to]="'#aboutus'" style="cursor: pointer">About Us</a></li> -->
 							<li>
-								<a [ngx-scroll-to]="'#products'" style="cursor: pointer">Products</a></li>
+								<a [ngx-scroll-to]="'#products'" style="cursor: pointer" *ngIf='showAuctions' (click)='showAuctions=false'>Products </a></li>
 							<li><a [ngx-scroll-to]="'#show'"(click)='showAuctions=true' style="cursor: pointer">Ongoing Auctions</a></li>
 						</ul>
 						
@@ -180,11 +180,11 @@
 														</div>
 														<div class="bottom">
 															<ul class="car-meta clearfix">
-																<li>
+																<!-- <li>
 																	<i class="fa fa-cogs"></i> Diesel
-																</li>
+																</li> -->
 																<li>
-																	<a routerLink='../adminproductdetails/{{product?._id}}' routerLinkActive="active"><i class="fa fa-tachometer"></i>More Details</a>
+																	<a routerLink='../adminproductdetails/{{product?._id}}' routerLinkActive="active"><i class="fa fa-th"></i>More</a>
 																</li>
 															</ul>
 														</div>
@@ -200,7 +200,6 @@
 									
 								</div>
 
-								<br><br>
 								<div class="" *ngIf='showAuctions'>
 								<!-- <div class="result-sorting-wrapper mb-30">
 										<div class="row">
@@ -248,11 +247,11 @@
 														</div>
 														<div class="bottom">
 															<ul class="car-meta clearfix">
-																<li>
+																<!-- <li>
 																	<i class="fa fa-cogs"></i>
-																</li>
+																</li> -->
 																<li>
-																	<a routerLink='../appchat/{{auction?._id}}' routerLinkActive="active"><i class="fa fa-tachometer"></i>Join Auction</a>
+																	<a routerLink='../appchat/{{auction?._id}}' routerLinkActive="active"><i class="fa fa-th"></i>Join Auction</a>
 																</li>
 															</ul>
 														</div>										
@@ -267,31 +266,7 @@
 									
 								</div>
 								</div>
-								
-								<div class="paging-wrapper mt-30 clearfix">
-								
-									<nav class="pull-right">
-										<ul class="paging">
-											<li class="disabled">
-												<a href="#" aria-label="Previous">
-													<span aria-hidden="true">&laquo;</span>
-												</a>
-											</li>
-											<li class="active"><a href="#">1</a></li>
-											<li><a href="#">2</a></li>
-											<li><a href="#">3</a></li>
-											<li><a href="#">4</a></li>
-											<li><a href="#">5</a></li>
-											<li>
-												<a href="#" aria-label="Next">
-													<span aria-hidden="true">&raquo;</span>
-												</a>
-											</li>
-										</ul>
-									</nav>
-									
-								</div>
-								
+															
 							</div>
 						
 						</div>
@@ -302,25 +277,26 @@
 							
 								<div class="side-module mt-40">
 								
-									<h3>Recent Auctions</h3>
+									<h3> Your Recent Auctions</h3>
 									
 									<div class="inner">
 									
 										<div class="car-item-sm" *ngFor="let auction of firstFourAuctions" >
 											<a href="#">
-												<div class="image-bg" style="background-image:url('images/car/01.jpg');"></div>
+												<!-- <div class="image-bg" style="background-image:url(product?.productimage);"><img [src]=product?.productimage alt="image" /></div> -->
+												<div class="image-bg" style="background-image:url(auction?.productObject?.productimage);"><img [src]=auction?.productObject?.productimage alt="Product image"/></div>
 												<div class="content">
-													<h6>{{auction?.auctionproduct?.productObject?.productname}}</h6>
+													<h6>{{auction?.productObject?.productname}}</h6>
 													<div class="bottom">
 														<ul class="car-meta clearfix">
-															<li>
+															<!-- <li>
 																<i class="fa fa-cogs"></i> Gasoline
 															</li>
 															<li>
 																<i class="fa fa-tachometer"></i> 2,888 cc.
-															</li>
+															</li> -->
 														</ul>
-														<p class="price">20,887$</p>
+														<p class="price">{{auction?.year}}</p>
 													</div>
 												</div>
 											</a>
@@ -338,7 +314,7 @@
 										
 										<div class="content">
 											<h5>Quick Call</h5>
-											<p>+66 74 554 884</p>
+											<p>+234-9069317298</p>
 										</div>
 									
 									</div>
@@ -349,7 +325,7 @@
 										</div>
 										
 										<div class="content">
-											<h5>Quick Email</h5>
+											<h5>Email Us</h5>
 											<p>support@taladrod.com</p>
 										</div>
 									

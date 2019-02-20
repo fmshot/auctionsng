@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 
 import { IChat } from '../interfaces/ichat';
 import { ChatService } from '../services/chat.service';
-import { AuctionService } from '../shared/auction.service';
 import { AdminproductService } from '../shared/adminproduct.service';
+import { AuctionService } from '../shared/auction.service';
 import { BidService } from '../shared/bid.service';
 import { AucttimeService } from '../shared/aucttime.service';
 import { AuctionuserService } from '../shared/auctionuser.service';
@@ -213,7 +213,7 @@ console.log('tr', this.viewedAuction);
         if (response.time) {
           this.universalTime = response.time;
         } else {
-          this.universalTime = 1200;
+          this.universalTime = 480;
         }
         // this.getProductsById(response.auctionProductId);
         this.adminprodService.getAdminProductById(this.viewedAuction.auctionProductId).subscribe(
@@ -226,7 +226,7 @@ console.log('tr', this.viewedAuction);
             console.log('Error ', error);
           });
        this.setViewTimer();
-       this.viewedAuction = response;
+      //  this.viewedAuction = response;
         // console.log ('this', this.viewedAuction);
         // this.viewedAuction = response.filter(auction => {
           // this.viewedAuction.forEach(element => {
@@ -289,6 +289,7 @@ console.log('tr', this.viewedAuction);
         console.log('All bids response ', this.allBids);
         if (this.timeMessage && !this.auctionClosed) {
           this.sendWinnerMessage(this.auctionWinner);
+          this.toggleAuction( this.viewedAuction);
         }
        
       },
@@ -356,7 +357,7 @@ let seconds = newTime%60;
       auctionStartAmount: this.viewedAuctionParsed.auctionStartAmount,
       productObject: this.viewedAuctionParsed,
     }
-    console.log('avbout to sened winner message');
+    console.log('about to send winner message');
     this.auctionService.postWinner(mailObject).subscribe(
       (res) => {
         this.auctionClosed = true;
@@ -548,6 +549,18 @@ public updateAuctionTimer() {
    }
 
    private deductTime(){ }
+
+
+  //switching toggle
+  public toggleAuction(auction){
+    auction.startAuction = (auction.startAuction.toString() == '0') ? 1 : 0;
+    this.auctionService.toggleAuction(auction).subscribe(res => {
+      console.log('Res ', res);
+    }, err => {
+      console.log('oiuyfdfghkjl', err)
+    });
+  }
+  //switching toggle
 }
 
 

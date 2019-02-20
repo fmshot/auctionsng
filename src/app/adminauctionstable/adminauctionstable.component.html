@@ -64,18 +64,18 @@
 						<a class="search-button" href="#"></a>
 						
 						<ul class="nav navbar-nav" id="responsive-menu">
-							<li>
+							<!-- <li>
 								<a href="#">MANAGE USERS</a>
-							</li>
+							</li> -->
 							<li class="active">
-								<a href="#">MANAGE PRODUCTS</a>
+								<a routerLink="/adminproductstable" routerLinkActive="active">MANAGE PRODUCTS</a>
 							<li>
 							<li>
-								<a href="review.html">MANAGE AUCTIONS</a>
+								<a routerLink="/auctionstable" routerLinkActive="active">MANAGE AUCTIONS</a>
 							</li>
-							<li>
+							<!-- <li>
 								<a href="blog.html">MANAGE BIDS</a>
-							</li>
+							</li> -->
 						</ul>
 						
 					</div><!--/.nav-collapse -->
@@ -151,7 +151,7 @@
 					<button class="btn btn-sm btn-success mr-3" data-toggle="modal" data-target="#exampleModaleditUser" (click)="addId(product)" data-placement="top" title="" data-original-title="Send"><i class="fa fa-edit"></i></button>               
 					<span data-toggle="tooltip" data-placement="top" title="Tooltip on top">
 					<label class="switch switch-3d switch-primary mr-3"><!-- *ngIf="product.status"-->
-					<!-- <input type="checkbox" class="switch-input"  [checked]="user.status" (click)="toggleRegistration(user)"> -->
+					<input type="checkbox" class="switch-input"  [checked]="auction.startAuction" (click)="toggleAuction(auction)">
 					</label>
 					</span>
 			  </div>
@@ -160,7 +160,7 @@
 				<div class="table-data-feature">
 					<span data-toggle="tooltip" data-placement="top" title="Tooltip on top">
 					<label class="switch switch-3d switch-primary mr-3"><!-- *ngIf="product.status"-->
-					<!-- <input type="checkbox" class="switch-input"  [checked]="user.status" (click)="toggleRegistration(user)"> -->
+					<input type="checkbox" class="switch-input"  [checked]="auction?.startAuction" (click)="toggleAuction(auction)">
 					</label>
 					</span>
 			  </div>

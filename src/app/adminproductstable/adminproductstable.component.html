@@ -28,12 +28,14 @@
 							<div class="col-sm-6 clearfix hidden-xs">
 
 								<div class="top-header-widget pull-right">
-									<a href="#">
-										<i class="fa fa-comments mr-3"></i> Get 
+									<a routerLink="../adminauctionstable" routerLinkActive="active">
+										<i class="mr-3"></i> All Auctions
 									</a>
 								</div>
 								<div class="top-header-widget pull-right">
-									<!-- <i class="fa fa-phone"></i> Logout -->
+									<a routerLink="../adminuserstable" routerLinkActive="active">
+									<i class=""></i> All Users
+									</a>
 								</div>
 
 							</div>
@@ -65,10 +67,10 @@
 						
 						<ul class="nav navbar-nav" id="responsive-menu">
 							<li>
-								<a routerLink="../adminuserstable" routerLinkActive="">MANAGE USERS</a>
+								<a routerLink="../adminauctionstable" routerLinkActive="active">MANAGE AUCTIONS</a>
 							</li>
 							<li class="active">
-								<a routerLink="../adminproductstable" routerLinkActive="">MANAGE PRODUCTS</a>
+								<a routerLink="../adminproductstable" routerLinkActive="active">MANAGE PRODUCTS</a>
 							<li>
 							<!-- <li>
 								<a href="review.html">MANAGE AUCTIONS</a>
@@ -118,11 +120,11 @@
       <br><br>
     <div class="container">
       <div class="tab-style-1-header clearfix">
-        <ul id="detailTab" class="tab-nav clearfix mb-10-xss">
+        <!-- <ul id="detailTab" class="tab-nav clearfix mb-10-xss"> -->
 		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">ADD NEW PRODUCT</button>
           <li class="active"><a href="#detailTab1"></a></li>
           <!-- <li><a href="#detailTab2" data-toggle="tab">Interior</a></li> -->
-        </ul><span class="pull-right">Minimum Amount : &#8358; {{minimumBidAmount|number}}</span>
+        <!-- </ul><span class="pull-right">Minimum Amount : &#8358; {{minimumBidAmount|number}}</span> -->
         <!-- <a data-toggle="modal" href="#enquiryModal" class="btn btn-info pull-right pull-left-xss">Enquiry Now</a> -->
     </div>
     <table class="table table-striped">
@@ -153,6 +155,7 @@
 
 				<!-- <a routerLink="../admineditproducts/{{product?._id}}" routerLinkActive="active"> -->
 				<button class="btn btn-sm btn-success mr-3" data-toggle="modal" data-target="#exampleModaleditProduct" (click)="addId(product)" data-placement="top" title="" data-original-title="Send"><i class="fa fa-edit"></i></button>
+
 				<!-- </a>                       -->
 				<span data-toggle="tooltip" data-placement="top" title="Tooltip on top">
 				<label class="switch switch-3d switch-primary mr-3">
@@ -171,45 +174,10 @@
   </div>
 		
 		
-		<div class="footer-wrapper scrollspy-footer">
+		<div class="footer-wrapper scrollspy-footer" id='ourcontact'>
 
 			<footer class="main-footer">
-			
-				<div class="container footer-newsletter">
-				
-					<div class="inner">
-					
-						<div class="row">
-					
-							<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
-							
-								<div class="row gap-15">
 								
-									<div class="col-xs-12 col-sm-4 col-md-3">
-										<h4>Taladrod Newsletter</h4>
-									</div>
-									
-									<div class="col-xss-12 col-xs-7 col-sm-5 col-md-6">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Enter your email subscribe">
-											
-										</div>
-									</div>
-									
-									<div class="col-xss-12 col-xs-5 col-sm-3 col-md-3">
-										<input type="submit" class="btn btn-submit btn-primary btn-block" value="Subscribe">
-									</div>
-									
-								</div>
-								
-							</div>
-							
-						</div>
-
-					</div>
-
-				</div>
-					
 				<div class="container">
 						
 					<div class="row">
@@ -217,19 +185,19 @@
 						<div class="col-xs-12 col-sm-12 col-md-3 mb-30-sm">
 						
 							<div class="footer-logo">
-								<a href="#home"><strong class="text-primary">TALAD</strong>Rod</a>
+								<a href="#home"><strong class="text-primary">AUCTION</strong>ng</a>
 							</div>
 							
-							<p class="about-us-footer">Abilities or he perfectly pretended so strangers be exquisite. Oh to another chamber pleased imagine do in. Went me rank at... <a href="#" class="font-italic">read more</a></p>
+							<p class="about-us-footer">Our trusworthiness is built from our high level of professionalism, acquired over the years.<a [ngx-scroll-to]="'#aboutus'" class="font-italic">read more</a></p>
 							
 							<div class="social-footer clearfix">
 								<a href="#"><i class="fa fa-facebook-official"></i></a>
 								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-google-plus "></i></a>
+								<!-- <a href="#"><i class="fa fa-google-plus "></i></a>
 								<a href="#"><i class="fa fa-codepen"></i></a>
 								<a href="#"><i class="fa fa-behance"></i></a>
 								<a href="#"><i class="fa fa-github"></i></a>
-								<a href="#"><i class="fa fa-jsfiddle"></i></a>
+								<a href="#"><i class="fa fa-jsfiddle"></i></a> -->
 							</div>
 						
 						</div>
@@ -239,14 +207,14 @@
 							<h4 class="footer-title">Quick Menu</h4>
 							
 							<ul class="menu-footer">
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Partners</a></li>
-								<li><a href="#">Terms</a></li>
-								<li><a href="#">Privacy Policy</a></li>
+								<li><a [ngx-scroll-to]="'#aboutus'">About Us</a></li>
+								<!-- <li><a href="#">Partners</a></li> -->
+								<!-- <li><a href="#">Terms</a></li> -->
+								<!-- <li><a href="#">Privacy Policy</a></li> -->
 								<li><a href="#">FAQ</a></li>
-								<li><a href="#">FAQ</a></li>
-								<li><a href="#">Press</a></li>
-								<li><a href="contact.html">Contact</a></li>
+								<!-- <li><a href="#">FAQ</a></li> -->
+								<!-- <li><a href="#">Press</a></li> -->
+								<!-- <li><a href="#">Contact</a></li> -->
 							</ul>
 						
 						</div>
@@ -279,7 +247,7 @@
 						<div class="col-sm-12 col-md-3">
 
 							<h4 class="footer-title">Address</h4>
-							<p class="footer-address">11/87, Santisuk Road, T. Sabarang, A.Muang, Pattani 94000 <br /><span class="block text-white font20 font700 line20 mt-10 mb-5">+66 74 665 855</span>support@taladrod.com</p>
+							<p class="footer-address">4, ASSBFFI Road, Alausa, Ikeja, Lagos, Nigeria<br /><span class="block text-white font20 font700 line20 mt-10 mb-5">+234-90693178</span>support@auction.ng.com</p>
 						
 						</div>
 						
@@ -296,14 +264,14 @@
 					<div class="row">
 					
 						<div class="col-sm-6">
-							<p class="copy-right">&#169; Copyright 2016 TALADRod - Responsive Template.</p>
+							<p class="copy-right">&#169; Copyright 2016 AUCTION.ng</p>
 						</div>
 						
 						<div class="col-sm-6">
 							<ul class="secondary-footer-menu clearfix">
-								<li><a href="#">My Account</a></li>
-								<li><a href="#">Sign-in</a></li>
-								<li><a href="#">Sign-up</a></li>
+								<li><a href="" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign-in</a></li>
+								<li><a href="" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Sign-up</a></li>
+								<!-- <li><a href="#">Sign-up</a></li> -->
 							</ul>
 						</div>
 						
@@ -366,7 +334,7 @@
 							
 								<div class="form-group"> 
 									<label>Product Url</label>
-									<input class="form-control" placeholder="Enter Product Url" formControlName="productimage"> 
+									<input class="form-control" placeholder="Enter Product Url" value={{downloadURL}} formControlName="productimage"> 
 								</div>
 							
 							</div>
@@ -461,7 +429,7 @@
 								
 									<div class="form-group"> 
 										<label>Product Url</label>
-										<input class="form-control" placeholder="Enter Product Url" formControlName="productimage"> 
+										<input class="form-control" value='' placeholder="Enter Product Url" formControlName="productimage"> 
 									</div>
 								
 								</div>

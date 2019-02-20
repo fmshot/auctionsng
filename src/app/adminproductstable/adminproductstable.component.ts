@@ -121,6 +121,14 @@ export class AdminproductstableComponent implements OnInit {
       // map(s => s.state)
       finalize(() => this.downloadURL = this.ref.getDownloadURL() )
     );
+    
+    this.downloadURL.subscribe(res => {
+      console.log('DOOOOOWNNNNNNNNNNNLOOOOOOOOOOAD: ', res);
+      this.productsForm.patchValue({'productimage':res});
+      alert(res);
+  });
+    
+
     this.uploadProgress = this.task.percentageChanges();
     // this.downloadURL = this.task.downloadURL();
     //  this.getimageUrl = this.ref.getDownloadURL().subscribe(
@@ -265,6 +273,9 @@ console.log('ththt', data._id);
     });
   }
   //switching toggle
+
+  //deleting a product
+  public deleteAProduct(product){}
 
 }
 

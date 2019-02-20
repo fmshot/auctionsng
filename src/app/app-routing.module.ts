@@ -8,11 +8,14 @@ import { ChatComponent} from './chat/chat.component';
 import { AdminproductstableComponent } from './adminproductstable/adminproductstable.component';
 import { AdminuserstableComponent } from './adminuserstable/adminuserstable.component';
 import { AdminauctionstableComponent } from './adminauctionstable/adminauctionstable.component';
+import { FaqComponent } from './faq/faq.component';
+
 
 
 
 
 const routes: Routes = [
+  { path: 'faq', component: FaqComponent },
   { path: 'adminproductdetails/:id', component: NewproductsdetailsComponent},
   { path: 'userlanding', component: UserlandingComponent },
   { path: '', redirectTo: '/userlanding', pathMatch: 'full'},

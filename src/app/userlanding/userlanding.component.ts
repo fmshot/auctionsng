@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, FormControl, NgForm, Validators} from '@angular/forms';
 import {ActivatedRoute} from "@angular/router";
 import { Router } from '@angular/router';
+// import {ViewChild, ElementRef} from '@angular/core';
 
 
 import {AdminproductService} from '../shared/adminproduct.service';
@@ -20,6 +21,7 @@ import {AuctionService} from '../shared/auction.service';
 
 })
 export class UserlandingComponent implements OnInit {
+  // @ViewChild('closeBtn') closeBtn: ElementRef;
   public removeShowAuctionButton3 = 'please login to view auctions!';
   public removeShowAuctionButton2: boolean = false;
   public removeShowAuctionButton: boolean = false;
@@ -76,9 +78,10 @@ export class UserlandingComponent implements OnInit {
 
   }
   ngOnInit() {
+  this.removeShowAuctionButton2 = false;
     if (this.loggedInUser) {
       this.removeShowAuctionButton = true;
-      this.removeShowAuctionButton2 = true;
+      // this.removeShowAuctionButton2 = true;
     }
     // console.log('grhjk,m nb');
     this.getProducts();
@@ -96,7 +99,9 @@ export class UserlandingComponent implements OnInit {
         // this.userAccessForm.reset();
         // this.router.navigate(['/productdetails',{}]);
        localStorage.setItem('current_user', JSON.stringify(res));
+       document.getElementById('close_modal').click();
         this.router.navigateByUrl('/userdashboard');
+        
         // this.resetForm(form);
         // this.getProducts();
       },
@@ -185,6 +190,10 @@ private getAuctions() {
       console.log('Error ', error);
     });
 }
+ // call this wherever you want to close modal
+//  private closeModal(): void {
+//   this.closeBtn.nativeElement.click();
+// }
 
 }
 // res.data.forEach(auction => {
