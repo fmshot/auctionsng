@@ -28,16 +28,11 @@
 							<div class="col-sm-6 clearfix hidden-xs">
 
 								<div class="top-header-widget pull-right">
-									<a href="#">
-										<i class="fa fa-comments mr-3"></i> 
-									</a>
-								</div>
-								<div class="top-header-widget pull-right">
 									<i class="fa fa-phone"></i> call us:09069317298
 								</div>
 								<div class="top-header-widget pull-right">
 									<a (click)="onLogout()">
-										<i class="fa fa-comments mr-3" style="cursor: pointer">Logout</i> 
+										<i class="" style="cursor: pointer">Logout</i> 
 									</a>
 								</div>
 
@@ -275,26 +270,21 @@
 						
 							<aside class="sidebar-wrapper">
 							
-								<div class="side-module mt-40">
+								<div *ngIf='!showAuctions' class="side-module mt-40">
 								
-									<h3> Your Recent Auctions</h3>
+									<h3>Auctions</h3>
 									
 									<div class="inner">
 									
-										<div class="car-item-sm" *ngFor="let auction of firstFourAuctions" >
+										<div class="car-item-sm" *ngFor="let auction of onGoingAuctions" >
 											<a href="#">
-												<!-- <div class="image-bg" style="background-image:url(product?.productimage);"><img [src]=product?.productimage alt="image" /></div> -->
+											
 												<div class="image-bg" style="background-image:url(auction?.productObject?.productimage);"><img [src]=auction?.productObject?.productimage alt="Product image"/></div>
 												<div class="content">
 													<h6>{{auction?.productObject?.productname}}</h6>
 													<div class="bottom">
 														<ul class="car-meta clearfix">
-															<!-- <li>
-																<i class="fa fa-cogs"></i> Gasoline
-															</li>
-															<li>
-																<i class="fa fa-tachometer"></i> 2,888 cc.
-															</li> -->
+															
 														</ul>
 														<p class="price">{{auction?.year}}</p>
 													</div>
@@ -304,6 +294,32 @@
 									</div>
 									
 								</div>
+
+								<div *ngIf='showAuctions' class="side-module mt-40">
+								
+									<h3>PRODUCTS</h3>
+									
+									<div class="inner">
+									
+										<div class="car-item-sm" *ngFor="let product of allProducts" >
+											<a href="#">
+											
+												<div class="image-bg"><img [src]=product?.productimage alt="Product image"/></div>
+												<div class="content">
+													<!-- <h6>{{product?.productname}}</h6> -->
+													<div class="bottom">
+														<ul class="car-meta clearfix">
+															
+														</ul>
+														<a class="price" routerLink='../adminproductdetails/{{product?._id}}' routerLinkActive="active">View Details</a>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									
+								</div>
+								
 								
 								<div class="mt-40 bt pt-20">
 									<div class="featured-item">
@@ -326,7 +342,7 @@
 										
 										<div class="content">
 											<h5>Email Us</h5>
-											<p>support@taladrod.com</p>
+											<p>support@auctionsng.com</p>
 										</div>
 									
 									</div>

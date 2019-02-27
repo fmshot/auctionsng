@@ -22,9 +22,9 @@ const routes: Routes = [
   { path: 'userdashboard', component: UserdashboardComponent },
   { path: 'appchat/:id', component: ChatComponent},
   { path: 'appchat', component: ChatComponent},
-  { path: 'adminproductstable', component: AdminproductstableComponent},
-  { path: 'adminuserstable', component: AdminuserstableComponent },
-  { path: 'adminauctionstable', component: AdminauctionstableComponent }
+  { path: 'products-admin', component: AdminproductstableComponent},
+  { path: 'users-admin', component: AdminuserstableComponent },
+  { path: 'auctions-admin', component: AdminauctionstableComponent }
 
 
 ];

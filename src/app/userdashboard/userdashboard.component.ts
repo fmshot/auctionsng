@@ -151,7 +151,7 @@ arrayLimit = Math.floor(arrayLimit);
             // }
             userauction.auctionproduct =  JSON.parse(userauction.auctionproduct);
             console.log('s', response);
-            // response.auctionproduct.productobject =  JSON.parse(userauction.auctionproduct.productobject);
+            response.auctionproduct.productobject =  JSON.parse(userauction.auctionproduct.productobject);
             return;
           });
           response.forEach( (userauction) => {

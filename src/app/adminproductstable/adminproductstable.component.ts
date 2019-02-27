@@ -29,6 +29,7 @@ declare const $: any;
 export class AdminproductstableComponent implements OnInit {
   
   // from add new product
+  public prodimage: any;
   public productId: string;
   selectedFile = null;
   public productsForm: FormGroup;
@@ -42,6 +43,7 @@ export class AdminproductstableComponent implements OnInit {
   uploadProgress: Observable<number>;
   uploadState: Observable<any>;
   downloadURL: Observable<string>;
+  // downloadURL: any;
   ref: AngularFireStorageReference;
   task: AngularFireUploadTask;
 
@@ -71,7 +73,7 @@ export class AdminproductstableComponent implements OnInit {
       productcode: ["", Validators.required],
       minauctionprice: ["", Validators.required],
       description: [""],
-      productimage: [""],
+      // productimage: [""],
       auctiondate: [ "", Validators.required],
       auctiontime: [ "", Validators.required],
       // finalamountbidded: ["", Val,,idators.required],
@@ -79,15 +81,16 @@ export class AdminproductstableComponent implements OnInit {
   }
   static editProductsForm = () => {
     return {
-      productname: ["", Validators.required],
-      productcode: ["", Validators.required],
-      minauctionprice: ["", Validators.required],
-      description: [""],
-      productimage: [""],
-      auctiondate: [ "", Validators.required],
-      auctiontime: [ "", Validators.required],
+      productname: ['', Validators.required],
+      productcode: ['', Validators.required],
+      minauctionprice: ['', Validators.required],
+      description: [''],
+      // productimage: this.prodimage,
+      productimage: [''],
+      auctiondate: [ '', Validators.required],
+      auctiontime: [ '', Validators.required],
       // finalamountbidded: ["", Validators.required],
-    }
+    };
   }
 
   constructor( private afStorage: AngularFireStorage,
@@ -109,24 +112,42 @@ export class AdminproductstableComponent implements OnInit {
     this.getProducts();
 
     this.currentUser = JSON.parse(localStorage.getItem('current_user'));
-    console.log('Current User',this.currentUser);
+    console.log('Current User', this.currentUser);
 
   }
 
-  upload(event) {
+  async upload(event) {
     const id = Math.random().toString(36).substring(2);
     this.ref = this.afStorage.ref(id);
     this.task = this.ref.put(event.target.files[0]);
     this.uploadState = this.task.snapshotChanges().pipe(
       // map(s => s.state)
-      finalize(() => this.downloadURL = this.ref.getDownloadURL() )
+    await  finalize(
+        () => {
+          this.downloadURL = this.ref.getDownloadURL();
+          this.downloadURL.subscribe(
+               (response: any ) => {
+                // console.log('DOOOOOWNNNNNNNNNNNLOOOOOOOOOOAD: ', response);
+                this.prodimage = response;
+                console.log('DOOOOOAD: ', this.prodimage);
+                // alert(this.prodimage);
+            });
+
+          // this.getimageUrl = this.downloadURL;
+    // console.log('rrrrrrrr', this.getimageUrl);
+        }
+
+
+       )
     );
-    
-    this.downloadURL.subscribe(res => {
-      console.log('DOOOOOWNNNNNNNNNNNLOOOOOOOOOOAD: ', res);
-      this.productsForm.patchValue({'productimage':res});
-      alert(res);
-  });
+    // console.log('DOwloadurl: ', this.downloadURL);
+  //   this.downloadURL.subscribe(
+  //     (response: any ) => {
+  //     console.log('DOOOOOWNNNNNNNNNNNLOOOOOOOOOOAD: ', response);
+  //     this.prodimage = response;
+  //     console.log('DOOOOOAD: ', this.prodimage);
+  //     alert(this.prodimage);
+  // });
     
 
     this.uploadProgress = this.task.percentageChanges();
@@ -142,8 +163,7 @@ export class AdminproductstableComponent implements OnInit {
     //   () => {
 
     //   });
-    this.getimageUrl = this.downloadURL;
-    console.log('rrrrrrrr', this.getimageUrl);
+  
   }
   // onFileSelected(event) {
      // console.log(event);
@@ -158,10 +178,12 @@ export class AdminproductstableComponent implements OnInit {
   // }
   onSubmitproductsForm() {
     this.loads.requesting = true;
-    this.adminproductService.postAdminproduct(this.productsForm.value).subscribe(
+    const productObjectToSubmit = this.productsForm.value;
+    productObjectToSubmit['productimage'] = this.prodimage;
+    this.adminproductService.postAdminproduct(productObjectToSubmit).subscribe(
       (res) => {
         this.load.requesting = false;
-        // this.allProducts.push(res);
+        this.allProductsss.push(res);
         this.productsForm.reset();
 
       }, 
@@ -185,10 +207,10 @@ console.log('ththt', data._id);
 
   onSubmitEditedProduct() {
     this.load.requesting = true;
-    this.adminproductService.putAdminProduct(this.productsForm.value, this.productToEdit['_id']).subscribe(
+    this.adminproductService.putAdminProduct(this.editProductsForm.value, this.productToEdit['_id']).subscribe(
       (res) => {
         this.load.requesting = false;
-        this.allProducts.push(res);
+        this.allProductsss.push(res);
         this.productsForm.reset();
 
        },
@@ -200,19 +222,6 @@ console.log('ththt', data._id);
 
       });
   }
-// to get and patch product value in the form
-  // private getProductById (product_id) {
-  //   this.adminproductService.getAdminProductById(product_id).subscribe(
-  //   (response: any) => {
-  //     console.log('product', response);
-  //     this.productToEdit = response;
-  //     this.productsForm.patchValue(response);
-  //   },
-  //   (error) => {
-  //     console.log('Error', error);
-  //   });
-  // }
-  // to get and patch product value in the form
 
 //for complete table on init
   public getProducts() {
@@ -247,14 +256,13 @@ console.log('ththt', data._id);
   //for submitting new product
 
   // editing a product code
-
   public editAProduct(product: any) {
     this.productToEdit = product;
     this.editorReady = true;
     $('#mediumModal').modal('show');
   }
 
-  public saveEditedProduct() {
+  public saveEditedProduct(_id: string, i) {
   this.adminproductService.putAdminProduct(this.productToEdit, this.productToEdit['_id']).subscribe(res => {
     console.log('Res ', res);
   }, err => {
@@ -275,7 +283,17 @@ console.log('ththt', data._id);
   //switching toggle
 
   //deleting a product
-  public deleteAProduct(product){}
+  public deleteAProduct(product, _id: string, i) {
+    if (confirm('confirm delete?') == true) {
+    this.adminproductService.deleteProduct(product._id).subscribe((res) => {
+      this.allProductsss.splice(i, 1);
+    }, err => {
+        
+    });
+    
+  }
+
+}
 
 }
 

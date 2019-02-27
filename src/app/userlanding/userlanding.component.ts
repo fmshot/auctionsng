@@ -120,8 +120,10 @@ onSubmitRegistrationForm() {
   this.registrationService.postRegistration(this.registrationForm.value).subscribe(
     (res) => {
       this.load.requesting = false;
-      localStorage.setItem('currentRegistered_User', JSON.stringify(res));
-      // this.router.navigateByUrl('/userdashboard');
+      // localStorage.setItem('currentRegistered_User', JSON.stringify(res));
+      localStorage.setItem('current_user', JSON.stringify(res));
+      document.getElementById('close_modal2').click();
+      this.router.navigateByUrl('/userdashboard');
       this.allUsers.push(res);
       console.log('wwww', this.allUsers);
       this.registrationForm.reset();

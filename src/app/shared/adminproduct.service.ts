@@ -35,6 +35,11 @@ export class AdminproductService {
     return this.http.get(this.baseURL + '/' + id);
   }
 
+
+  deleteProduct(_id: string){
+    return this.http.delete(this.baseURL + `/${_id}`);
+      }
+
   public toggleAdminProduct(product) {
     return this.http.put(this.baseURL + '/toggle/' + product._id,product);
 

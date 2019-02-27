@@ -55,22 +55,23 @@
 					<div id="navbar" class="collapse navbar-collapse navbar-arrow pull-left">
 					
 						<!-- SEARCH -->
-						<div id="search-container">
+						<!-- <div id="search-container">
 							<form id="search-form" name="search-form" method="get" action="#">
 								<fieldset>
 									<input type="search" name="search" placeholder="Enter your keyword here and then press enter...">
 								</fieldset>
 							</form>
-						</div><!-- search-container -->
+						</div> -->
+						<!-- search-container -->
 						
 						<a class="search-button" href="#"></a>
 						
 						<ul class="nav navbar-nav" id="responsive-menu">
 							<li>
-								<a routerLink="../adminauctionstable" routerLinkActive="active">MANAGE AUCTIONS</a>
+								<a routerLink="../auctions-admin" routerLinkActive="active">MANAGE AUCTIONS</a>
 							</li>
 							<li class="active">
-								<a routerLink="../adminproductstable" routerLinkActive="active">MANAGE PRODUCTS</a>
+								<a routerLink="../products-admin" routerLinkActive="active">MANAGE PRODUCTS</a>
 							<li>
 							<!-- <li>
 								<a href="review.html">MANAGE AUCTIONS</a>
@@ -108,7 +109,7 @@
 							<ol class="breadcrumb">
 								<li class="active text">You Are Here:</li>
 								<li><a href="#">Home</a></li>
-								<li class="active">Details Page</li>
+								<li class="active">Admin-Products</li>
 							</ol>
 						</div>
 
@@ -139,7 +140,7 @@
           <th scope="col">Name</th>
           <th scope="col">Product Code</th>
           <th scope="col">Auction Date</th>
-          <th scope="col">Action</th>
+          <th class="text-center"   scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -155,6 +156,8 @@
 
 				<!-- <a routerLink="../admineditproducts/{{product?._id}}" routerLinkActive="active"> -->
 				<button class="btn btn-sm btn-success mr-3" data-toggle="modal" data-target="#exampleModaleditProduct" (click)="addId(product)" data-placement="top" title="" data-original-title="Send"><i class="fa fa-edit"></i></button>
+				
+				<button class="btn btn-sm btn-danger mr-3" (click)="deleteAProduct(product, product._id, i)"><i class="fa fa-times"></i></button>
 
 				<!-- </a>                       -->
 				<span data-toggle="tooltip" data-placement="top" title="Tooltip on top">
@@ -172,7 +175,6 @@
       </tbody>
     </table>
   </div>
-		
 		
 		<div class="footer-wrapper scrollspy-footer" id='ourcontact'>
 
@@ -294,7 +296,7 @@
 	  <div class="modal-content">
 			  <div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					  <h4 class="modal-title text-center">Add a New Product</h4>
+					  <h4 class="modal-title text-center">Add A New Product</h4>
 				  </div>
 		
 				  <div class="modal-body">
@@ -324,20 +326,20 @@
 							<div class="col-sm-12 col-md-12">
 					
 								<div class="form-group"> 
-									<label>Minimum Auction Price</label>
-									<input class="form-control" placeholder="Enter Minimum Auction Price" formControlName="minauctionprice"> 
+									<label>Description</label>
+									<input class="form-control" placeholder="Enter Minimum Auction Price" formControlName="description"> 
 								</div>
 							
 							</div>
 							
-							<div class="col-sm-12 col-md-12">
+							<!-- <div class="col-sm-12 col-md-12">
 							
 								<div class="form-group"> 
 									<label>Product Url</label>
-									<input class="form-control" placeholder="Enter Product Url" value={{downloadURL}} formControlName="productimage"> 
+									<input class="form-control" placeholder="Enter Product Url" value={{prodimage}} formControlName="productimage"> 
 								</div>
 							
-							</div>
+							</div> -->
 							
 							<div class="col-sm-12 col-md-12">
 							
@@ -352,12 +354,12 @@
 								<div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
 									File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
 								</div>
-								<div class="btn-group" role="group" *ngIf="uploadState | async; let state">
+								<!-- <div class="btn-group" role="group" *ngIf="uploadState | async; let state">
 									<button type="button" class="btn btn-primary" (click)="task.pause()" [disabled]="state === 'paused'">Pause</button>
 									<button type="button" class="btn btn-primary" (click)="task.cancel()" [disabled]="!(state === 'paused' || state === 'running')">Cancel</button>
 									<button type="button" class="btn btn-primary" (click)="task.resume()" [disabled]="state === 'running'">Resume</button>
 								</div>
-								<br>
+								<br> -->
 								<hr>
 								
 								</div>
@@ -377,11 +379,11 @@
   <div class="modal fade" id="exampleModaleditProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe1" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 				
-				<form [formGroup]="editProductsForm" (ngSubmit)="saveEditedProduct()">
+				<form [formGroup]="editProductsForm" (ngSubmit)="onSubmitEditedProduct()">
 		  <div class="modal-content">
 				  <div class="modal-header">
 						  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						  <h4 class="modal-title text-center">Edit This Product</h4>
+						  <h4 class="modal-title text-center">Edit This Product: {{productToEdit?.productname}}</h4>
 						  <h5>Edit {{productToEdit?.productname}}</h5>
 						  
 					  </div>
@@ -396,7 +398,7 @@
 												<input class="form-control" placeholder="Enter Product Name" type="hidden" formControlName="_id"> 
 											</div>
 										
-										</div>								
+									</div>								 
 								
 								<div class="col-sm-12 col-md-12">
 						
@@ -425,14 +427,14 @@
 								
 								</div>
 								
-								<div class="col-sm-12 col-md-12">
+								<!-- <div class="col-sm-12 col-md-12">
 								
 									<div class="form-group"> 
 										<label>Product Url</label>
 										<input class="form-control" value='' placeholder="Enter Product Url" formControlName="productimage"> 
 									</div>
 								
-								</div>
+								</div> -->
 								
 								<div class="col-sm-12 col-md-12">
 								

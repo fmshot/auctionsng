@@ -20,6 +20,7 @@ declare const $: any;
   providers: [AuctionService, AucttimeService, AuctionuserService]
 })
 export class ChatComponent implements OnInit, AfterViewInit {
+public stopSendingMail: false;
   public viewedAuctionParsed: any;
   public viewedthisProduct: any;
    public getprodbyid: any;
@@ -288,9 +289,11 @@ console.log('tr', this.viewedAuction);
         this.loader = false;
         console.log('All bids response ', this.allBids);
         if (this.timeMessage && !this.auctionClosed) {
-          this.sendWinnerMessage(this.auctionWinner);
           this.toggleAuction( this.viewedAuction);
+          this.sendWinnerMessage(this.auctionWinner);
+          
         }
+        
        
       },
       (error) => {
@@ -358,6 +361,7 @@ let seconds = newTime%60;
       productObject: this.viewedAuctionParsed,
     }
     console.log('about to send winner message');
+  
     this.auctionService.postWinner(mailObject).subscribe(
       (res) => {
         this.auctionClosed = true;
@@ -366,6 +370,7 @@ let seconds = newTime%60;
       (error) => {
         console.log('error in email', error)
       })
+      
   }
 
 
